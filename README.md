@@ -12,10 +12,10 @@ used to experience? Like Harry Potter World, The Hobbit World, Adventure Time Wo
 ## Details
 
 **What will the application do?**
-- Stores a given data as popular fantasy worlds
+- Stores fantasy worlds in categories including *cartoon, movies, books, games*
 - Users can 'unlock'/open a world if they experienced that world (from books, movies, etc)
 - Keep tracks of the worlds users have been to
-- List the worlds users been to in (either through menu, or map, or both)
+- List the worlds users been to in 
 
 **Target users:** anyone who is a big fan of fantasy books, fantasy movies, who are obsessed with 
 fantasy worlds (Potterheads, Alice in Wonderland fans, etc...)
@@ -25,3 +25,12 @@ fantasy worlds (Potterheads, Alice in Wonderland fans, etc...)
 - Because fantasy and traveling is fun!! I want to combine my two interests for this project
 - COVID is going to prevent people from traveling, so let's 'travel' through pages and movies!
 - I'm learning to create an application with a topic I really like!
+
+##User Stories
+- As a user, I want to be able to add a fantasy world to my world list in appropriate category
+- As a user, I want to be able to mark a fantasy world as "been to", "want to", and "favourite".
+- As a user, I want to be able to view the lists of worlds I have been to, want to go to, and favourite 
+- As a user, I want to be able to view all worlds inside (both been to and not) (locked and unlocked) 
+- As a user, I want to be able to delete a world from my world list, or any list "been to", "want to", or "fav"
+- As a user, I want to be able to select a category and view all worlds inside it. 
+
