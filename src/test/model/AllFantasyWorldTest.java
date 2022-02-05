@@ -6,6 +6,8 @@ import org.junit.jupiter.api.Test;
 import static model.Category.*;
 import static org.junit.jupiter.api.Assertions.*;
 
+// tests for methods in AllFantasyWorld
+
 public class AllFantasyWorldTest {
 
     FantasyWorld HarryPotter;
