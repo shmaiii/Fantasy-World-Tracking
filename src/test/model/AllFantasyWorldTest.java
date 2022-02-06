@@ -163,6 +163,27 @@ public class AllFantasyWorldTest {
         assertEquals(all.getMovie().size(), 0);
     }
 
+    @Test
+    public void deleteWorldSublistTest(){
+        all.storeWorld(Riverdale);
+        all.storeWorld(HarryPotter);
+        all.add(all.getBeenTo(), HarryPotter);
+        all.add(all.getFav(), HarryPotter);
+        all.add(all.getFav(), Riverdale);
+
+        all.deleteWorld(HarryPotter);
+        assertEquals(all.getBeenTo().size(), 0);
+        assertFalse(all.getFav().contains(HarryPotter));
+        assertEquals(all.getFav().size(), 1);
+
+        all.add(all.getWantTo(), Riverdale);
+        all.deleteWorld(Riverdale);
+        assertEquals(all.getFav().size(), 0);
+        assertEquals(all.getWantTo().size(), 0);
+
+
+    }
+
 
     @Test
     public void removeTest(){

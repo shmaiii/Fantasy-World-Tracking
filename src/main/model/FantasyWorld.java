@@ -12,7 +12,6 @@ public class FantasyWorld {
 
     // EFFECTS: construct a FantasyWorld with given name and category, with statuses
     // of beenTo, wantTo, and fav set to false
-    // add this world to the list of all worlds.
     public FantasyWorld(String name, Category category) {
         this.name = name;
         this.category = category;

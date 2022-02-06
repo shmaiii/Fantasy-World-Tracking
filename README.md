@@ -27,7 +27,7 @@ fantasy worlds (Potterheads, Alice in Wonderland fans, etc...)
 - I'm learning to create an application with a topic I really like!
 
 ##User Stories
-- As a user, I want to be able to add a fantasy world to my world list in appropriate category
+- As a user, I want to be able to create and add a fantasy world to my world list in appropriate category
 - As a user, I want to be able to mark a fantasy world as "been to", "want to", and "favourite".
 - As a user, I want to be able to view the lists of worlds I have been to, want to go to, and favourite 
 - As a user, I want to be able to view all worlds inside (both been to and not) (locked and unlocked) 

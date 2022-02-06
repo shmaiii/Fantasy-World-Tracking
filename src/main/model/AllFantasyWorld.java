@@ -92,7 +92,7 @@ public class AllFantasyWorld {
 
     //REQUIRES: fw is already in the list of all world
     // MODIFIES: this
-    // EFFECTS: delete a world from list of all world and appropriate category it belongs to
+    // EFFECTS: delete a world from list of all world and appropriate category it belongs to and other sublists
     public void deleteWorld(FantasyWorld fw) {
         allWorld.remove(fw);
 
@@ -105,6 +105,16 @@ public class AllFantasyWorld {
             movie.remove(fw);
         } else {
             game.remove(fw);
+        }
+
+        while (allBeenTo.contains(fw) || allFav.contains(fw) || allWantTo.contains(fw)) {
+            if (allBeenTo.contains(fw)) {
+                allBeenTo.remove(fw);
+            } else if (allWantTo.contains(fw)) {
+                allWantTo.remove(fw);
+            } else if (allFav.contains(fw)) {
+                allFav.remove(fw);
+            }
         }
     }
 
