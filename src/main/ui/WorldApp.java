@@ -98,7 +98,7 @@ public class WorldApp {
         displayHomePage();
     }
 
-    // EFFECTS: prompt user to choose from 4 categories, and then show every worlds in the indicated category list
+    // EFFECTS: prompt user to choose from 4 categories, and then show every world in the indicated category list
     // if the indicated list is empty then print "You have nothing here yet want to add a world?"
     // yes/no then leave it or createWorld.
     public void viewListCategory() {
@@ -137,7 +137,7 @@ public class WorldApp {
 
 
     //EFFECTS: show all the worlds created, with each world having the option of mark as or delete
-    // mark as will mark world as beenTo, wantTo, or fav. No marking is okay
+    // mark as will mark world as beenTo, wantTo, or fav.
     public void viewListAllWorld() {
         checkEmptyListView(myWorld.getAllWorld());
 
@@ -172,7 +172,6 @@ public class WorldApp {
                 onQueue.add(fw);
             }
         }
-
         removeItemsOnQueue(lofw);
         backToHomepage();
     }

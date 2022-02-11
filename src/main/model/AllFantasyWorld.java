@@ -66,8 +66,8 @@ public class AllFantasyWorld {
     }
 
     //MODIFIES: this
-    // EFFECTS: add this fworld to list of all worlds, and add this world to according category list.
-    // return true if added successfully, return false if the fworld has already existed in the list to avoid
+    // EFFECTS: add this fw to list of all worlds, and add this world to according category list.
+    // return true if added successfully, return false if the fw has already existed in the list to avoid
     // duplication.
     public boolean storeWorld(FantasyWorld fw) {
         if (allWorld.contains(fw) == false) {
@@ -138,7 +138,6 @@ public class AllFantasyWorld {
     // and set the status accordingly, return true if success, else return false (if world has alr existed in the list)
     public boolean add(List<FantasyWorld> listToAdd, FantasyWorld fw) {
         if (listToAdd.contains(fw) == false) {
-
 
             listToAdd.add(fw);
 
