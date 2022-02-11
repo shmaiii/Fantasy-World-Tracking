@@ -106,15 +106,14 @@ public class AllFantasyWorld {
         } else {
             game.remove(fw);
         }
-
-        while (allBeenTo.contains(fw) || allFav.contains(fw) || allWantTo.contains(fw)) {
-            if (allBeenTo.contains(fw)) {
-                allBeenTo.remove(fw);
-            } else if (allWantTo.contains(fw)) {
-                allWantTo.remove(fw);
-            } else if (allFav.contains(fw)) {
-                allFav.remove(fw);
-            }
+        if (allBeenTo.contains(fw)) {
+            allBeenTo.remove(fw);
+        }
+        if (allWantTo.contains(fw)) {
+            allWantTo.remove(fw);
+        }
+        if (allFav.contains(fw)) {
+            allFav.remove(fw);
         }
     }
 
