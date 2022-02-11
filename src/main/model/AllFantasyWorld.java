@@ -136,7 +136,7 @@ public class AllFantasyWorld {
     //REQUIRES: listToAdd is one of allBeenTom, allWantTo, allFav
     // MODIFIES: this
     //EFFECTS: add a world to the indicated list (beenTo, wantTo, fav)
-    // and set the status accordingly, return true if success, else return false (if book has alr existed in the list
+    // and set the status accordingly, return true if success, else return false (if world has alr existed in the list)
     public boolean add(List<FantasyWorld> listToAdd, FantasyWorld fw) {
         if (listToAdd.contains(fw) == false) {
 

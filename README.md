@@ -30,7 +30,7 @@ fantasy worlds (Potterheads, Alice in Wonderland fans, etc...)
 - As a user, I want to be able to create and add a fantasy world to my world list in appropriate category
 - As a user, I want to be able to mark a fantasy world as "been to", "want to", and "favourite".
 - As a user, I want to be able to view the lists of worlds I have been to, want to go to, and favourite 
-- As a user, I want to be able to view all worlds inside (both been to and not) (locked and unlocked) 
-- As a user, I want to be able to delete a world from my world list, or any list "been to", "want to", or "fav"
+- As a user, I want to be able to view all worlds inside (both been to and not) 
+- As a user, I want to be able to delete a world from my world list, or remove any list "been to", "want to", or "fav"
 - As a user, I want to be able to select a category and view all worlds inside it. 
 
