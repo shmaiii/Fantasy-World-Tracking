@@ -33,4 +33,6 @@ fantasy worlds (Potterheads, Alice in Wonderland fans, etc...)
 - As a user, I want to be able to view all worlds inside (both been to and not) 
 - As a user, I want to be able to delete a world from my world list, or remove any list "been to", "want to", or "fav"
 - As a user, I want to be able to select a category and view all worlds inside it. 
-
+- As a user, I want to be able to save the current state of the app, including all worlds I created and all the lists I
+made changes to
+- As a user, I want to be able to load the existing worlds and lists from file. 
