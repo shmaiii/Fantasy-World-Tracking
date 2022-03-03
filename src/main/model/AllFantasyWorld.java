@@ -157,6 +157,7 @@ public class AllFantasyWorld implements Writable {
         return false;
     }
 
+    //  EFFECTS: turning the main features of the world state to json obj
     @Override
     public JSONObject toJson() {
         JSONObject json = new JSONObject();
@@ -173,6 +174,7 @@ public class AllFantasyWorld implements Writable {
         return json;
     }
 
+    //EFFECTS: turning lists to jsonArray
     private JSONArray turnToJson(List<FantasyWorld> low) {
         JSONArray jsonArray = new JSONArray();
 

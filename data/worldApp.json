@@ -1,0 +1,38 @@
+{
+    "allFav": [{
+        "name": "AdventureTime",
+        "category": "CARTOON"
+    }],
+    "allWantTo": [{
+        "name": "LOL",
+        "category": "GAME"
+    }],
+    "game": [{
+        "name": "LOL",
+        "category": "GAME"
+    }],
+    "allBeenTo": [],
+    "movie": [{
+        "name": "Riverdale",
+        "category": "MOVIE"
+    }],
+    "cartoon": [{
+        "name": "AdventureTime",
+        "category": "CARTOON"
+    }],
+    "book": [],
+    "allWorld": [
+        {
+            "name": "AdventureTime",
+            "category": "CARTOON"
+        },
+        {
+            "name": "Riverdale",
+            "category": "MOVIE"
+        },
+        {
+            "name": "LOL",
+            "category": "GAME"
+        }
+    ]
+}

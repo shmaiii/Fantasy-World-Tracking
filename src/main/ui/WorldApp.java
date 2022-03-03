@@ -5,22 +5,30 @@ import model.AllFantasyWorld;
 import static model.Category.*;
 
 import model.FantasyWorld;
+import persistence.JsonReader;
+import persistence.JsonWriter;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
 // My Fantasy World Application
 public class WorldApp {
+    private static final String JSON_FILE = "./data/worldApp.json";
     private AllFantasyWorld myWorld;
     private Scanner input;
     private List<FantasyWorld> onQueue;
+    private JsonWriter jsonWriter;
+    private JsonReader jsonReader;
 
     // EFFECTS: construct a WorldApp that sets the initial state of the AllFantasyWorld, with an empty onQueue list
     public WorldApp() {
         myWorld = new AllFantasyWorld();
         input = new Scanner(System.in);
         onQueue = new ArrayList<>();
+        jsonReader = new JsonReader(JSON_FILE);
+        jsonWriter = new JsonWriter(JSON_FILE);
     }
 
     // EFFECTS: display the initial welcome message and two big parent options - view/create world
@@ -95,6 +103,7 @@ public class WorldApp {
                 System.out.println("Invalid");
             }
         }
+        saveWorldState();
         displayHomePage();
     }
 
@@ -185,6 +194,7 @@ public class WorldApp {
             }
             onQueue.clear();
         }
+        saveWorldState();
     }
 
     //REQUIRES: fw in onQueue is in lofw
@@ -198,6 +208,7 @@ public class WorldApp {
             }
             onQueue.clear();
         }
+        saveWorldState();
     }
 
     // MODIFIES: this
@@ -213,6 +224,7 @@ public class WorldApp {
             myWorld.add(myWorld.getFav(), fw);
         }
         System.out.println("Added!");
+        saveWorldState();
     }
 
     //EFFECT: see if the list is empty, if it is then prompt message
@@ -235,5 +247,23 @@ public class WorldApp {
         }
     }
 
+    // EFFECTS: save the worldState to file
+    private void saveWorldState() {
+        try {
+            jsonWriter.open();
+            jsonWriter.write(myWorld);
+            jsonWriter.close();
+        } catch (IOException e) {
+            System.out.println("There is an error - exception thrown");
+        }
+    }
 
+    //EFFECTS: load the worldState from file
+    public void loadWorldState() {
+        try {
+            myWorld = jsonReader.read();
+        } catch (IOException e) {
+            System.out.println("There is an error - IOException thrown");
+        }
+    }
 }
