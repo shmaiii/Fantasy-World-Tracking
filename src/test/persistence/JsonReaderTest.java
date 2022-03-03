@@ -84,4 +84,18 @@ public class JsonReaderTest extends JsonTest {
         }
     }
 
+    @Test
+    public void testReaderGeneralInvalidSubWorld(){
+        reader = new JsonReader("./data/testReaderInvalidSublist.json");
+        try {
+            AllFantasyWorld w = reader.read();
+            assertEquals(1, w.getWantTo().size());
+            checkWorld("AdventureTime", CARTOON, w.getWantTo().get(0));
+            assertEquals(4, w.getAllWorld().size());
+
+        } catch (IOException e){
+            fail("There should be no exception here");
+        }
+    }
+
 }
