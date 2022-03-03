@@ -1,5 +1,9 @@
 package model;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
+import persistence.Writable;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -8,7 +12,7 @@ import static model.Category.*;
 
 // represents everything inside the app, containing list of all worlds,
 // list of each category, list of wantTo beenTo and fav
-public class AllFantasyWorld {
+public class AllFantasyWorld implements Writable {
     private List<FantasyWorld> allWorld;
 
     private List<FantasyWorld> allBeenTo;
@@ -151,6 +155,32 @@ public class AllFantasyWorld {
             return true;
         }
         return false;
+    }
+
+    @Override
+    public JSONObject toJson() {
+        JSONObject json = new JSONObject();
+        json.put("allWorld", turnToJson(allWorld));
+        json.put("allBeenTo", turnToJson(allBeenTo));
+        json.put("allWantTo", turnToJson(allWantTo));
+        json.put("allFav", turnToJson(allFav));
+
+        json.put("cartoon", turnToJson(cartoon));
+        json.put("book", turnToJson(book));
+        json.put("movie", turnToJson(movie));
+        json.put("game", turnToJson(game));
+
+        return json;
+    }
+
+    private JSONArray turnToJson(List<FantasyWorld> low) {
+        JSONArray jsonArray = new JSONArray();
+
+        for (FantasyWorld fw : low) {
+            jsonArray.put(fw.toJson());
+        }
+
+        return jsonArray;
     }
 
 }

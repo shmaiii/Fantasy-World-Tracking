@@ -1,8 +1,11 @@
 package model;
 
+import org.json.JSONObject;
+import persistence.Writable;
+
 // Represent a FantasyWorld having name, category, status of
 // beenTo, wantTo, and fav.
-public class FantasyWorld {
+public class FantasyWorld implements Writable {
 
     private String name;
     private Category category;
@@ -57,6 +60,14 @@ public class FantasyWorld {
     // EFFECTS: change the status beenTo of the world by flipping
     public void setFav(boolean b) {
         fav = b;
+    }
+
+    @Override
+    public JSONObject toJson() {
+        JSONObject json = new JSONObject();
+        json.put("name", name);
+        json.put("category", category);
+        return json;
     }
 
 }
