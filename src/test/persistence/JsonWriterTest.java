@@ -8,10 +8,12 @@ import org.junit.jupiter.api.Test;
 
 
 import java.io.IOException;
+import java.util.List;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.fail;
 
-public class JsonWriterTest {
+public class JsonWriterTest extends JsonTest {
     AllFantasyWorld myWorld;
     JsonWriter writer;
 
@@ -39,6 +41,13 @@ public class JsonWriterTest {
             writer.write(myWorld);
             writer.close();
 
+            JsonReader reader = new JsonReader("./data/testWriterEmptyWorld.json");
+            myWorld = reader.read();
+            assertEquals(0, myWorld.getAllWorld().size());
+            assertEquals(0, myWorld.getBeenTo().size());
+            assertEquals(0, myWorld.getWantTo().size());
+            assertEquals(0, myWorld.getFav().size());
+
         }catch (IOException e){
             fail("There shouldn't be an exception here");
         }
@@ -48,11 +57,23 @@ public class JsonWriterTest {
     public void testWriterGeneralWorld(){
         try {
             writer = new JsonWriter("./data/testWriterGeneralWorld.json");
-            myWorld.storeWorld(new FantasyWorld("HarryPotter", MOVIE));
-            myWorld.storeWorld(new FantasyWorld("AliceInWonderLand", BOOK));
+            FantasyWorld toAdd1 = new FantasyWorld("HarryPotter", BOOK);
+            myWorld.storeWorld(toAdd1);
+            myWorld.storeWorld(new FantasyWorld("AdventureTime", CARTOON));
+            myWorld.add(myWorld.getFav(), toAdd1);
             writer.open();
             writer.write(myWorld);
             writer.close();
+
+            JsonReader reader = new JsonReader("./data/testWriterGeneralWorld.json");
+            assertEquals(2, myWorld.getAllWorld().size());
+            assertEquals(1, myWorld.getBook().size(), myWorld.getCartoon().size());
+            assertEquals(0, myWorld.getGame().size(), myWorld.getMovie().size());
+            checkWorld("HarryPotter", BOOK, myWorld.getAllWorld().get(0));
+            checkWorld("AdventureTime", CARTOON, myWorld.getAllWorld().get(1));
+
+            assertEquals(1, myWorld.getFav().size());
+            checkWorld("HarryPotter", BOOK, myWorld.getFav().get(0));
 
         } catch (IOException e){
             fail("There shouldn't be exception here");

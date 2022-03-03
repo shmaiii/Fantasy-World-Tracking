@@ -1,0 +1,64 @@
+{
+  "allFav": [
+    {
+      "name": "Riverdale",
+      "category": "MOVIE"
+    },
+    {
+      "name": "LOL",
+      "category": "GAME"
+    }
+  ],
+  "allWantTo": [
+    {
+      "name": "AdventureTime",
+      "category": "CARTOON"
+    }
+  ],
+  "game": [
+    {
+      "name": "LOL",
+      "category": "GAME"
+    }
+  ],
+  "allBeenTo": [
+    {
+      "name": "HarryPotter",
+      "category": "BOOK"
+    }
+  ],
+  "movie": [{
+    "name": "Riverdale",
+    "category": "MOVIE"
+  }],
+  "cartoon": [
+    {
+      "name": "AdventureTime",
+      "category": "CARTOON"
+    }
+  ],
+  "book": [
+    {
+      "name": "HarryPotter",
+      "category": "BOOK"
+    }
+  ],
+  "allWorld": [
+    {
+      "name": "HarryPotter",
+      "category": "BOOK"
+    },
+    {
+      "name": "AdventureTime",
+      "category": "CARTOON"
+    },
+    {
+      "name": "LOL",
+      "category": "GAME"
+    },
+    {
+      "name": "Riverdale",
+      "category": "MOVIE"
+    }
+  ]
+}
