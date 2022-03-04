@@ -62,6 +62,7 @@ public class FantasyWorld implements Writable {
         fav = b;
     }
 
+    //EFFECTS: sparse the FantasyWorld obj to JSON object to be saved to data
     @Override
     public JSONObject toJson() {
         JSONObject json = new JSONObject();
