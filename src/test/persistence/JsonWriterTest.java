@@ -13,6 +13,7 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.fail;
 
+//citation: modelled on the JsonSerializationDemo project provided on EDx
 public class JsonWriterTest extends JsonTest {
     AllFantasyWorld myWorld;
     JsonWriter writer;

@@ -10,6 +10,7 @@ import java.io.IOException;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.fail;
 
+//citation: modelled on the JsonSerializationDemo project provided on EDx
 public class JsonReaderTest extends JsonTest {
     JsonReader reader;
 
