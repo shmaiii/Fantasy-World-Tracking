@@ -31,31 +31,36 @@ public class WorldApp {
         jsonWriter = new JsonWriter(JSON_FILE);
     }
 
+    public AllFantasyWorld getWorld() {
+        return myWorld;
+    }
+
     // EFFECTS: display the initial welcome message and two big parent options - view/create world
     // show available options and take users' command
     public void displayHomePage() {
-        System.out.println("Welcome to My Fantasy World");
-        System.out.println("Let's create our own adventures!");
-
-        System.out.println("Choose view-world / view-category / create/ exit");
-        String command = input.next();
-        while (true) {
-            if (command.equals("view-category")) {
-                viewListCategory();
-                break;
-            } else if (command.equals("create")) {
-                createWorld();
-                break;
-            } else if (command.equals("view-world")) {
-                optionForViewWorld();
-                break;
-            } else if (command.equals("exit")) {
-                break;
-            } else {
-                System.out.println("Not a valid command, enter again");
-                command = input.next();
-            }
-        }
+        new HomePage(this);
+//        System.out.println("Welcome to My Fantasy World");
+//        System.out.println("Let's create our own adventures!");
+//
+//        System.out.println("Choose view-world / view-category / create/ exit");
+//        String command = input.next();
+//        while (true) {
+//            if (command.equals("view-category")) {
+//                viewListCategory();
+//                break;
+//            } else if (command.equals("create")) {
+//                createWorld();
+//                break;
+//            } else if (command.equals("view-world")) {
+//                optionForViewWorld();
+//                break;
+//            } else if (command.equals("exit")) {
+//                break;
+//            } else {
+//                System.out.println("Not a valid command, enter again");
+//                command = input.next();
+//            }
+//        }
     }
 
     // EFFECTS: show available options for view-world choice

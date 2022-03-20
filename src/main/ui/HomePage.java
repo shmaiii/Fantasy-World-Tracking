@@ -3,9 +3,13 @@ package ui;
 import javax.swing.*;
 import java.awt.*;
 
+// A class that represents homepage
 public class HomePage extends JFrame {
+    WorldApp myWorld;
 
-    public HomePage() {
+    //EFFECTS: construct object that represents homepage
+    public HomePage(WorldApp w) {
+        this.myWorld = w;
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(600, 600);
         setLayout(new GridLayout(2, 1));
@@ -17,7 +21,6 @@ public class HomePage extends JFrame {
         sentences.add(label1);
         Label label2 = new Label("Let's create our own adventure!", Label.CENTER);
         sentences.add(label2);
-
 
         JPanel buttons = new JPanel();
         buttons.setLayout(new GridLayout(2, 2));
@@ -35,4 +38,6 @@ public class HomePage extends JFrame {
         setTitle("My Fantasy World");
         setVisible(true);
     }
+
+
 }
