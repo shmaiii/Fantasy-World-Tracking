@@ -2,10 +2,13 @@ package ui;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 // A class that represents homepage
 public class HomePage extends JFrame {
     WorldApp myWorld;
+    JPanel buttons;
 
     //EFFECTS: construct object that represents homepage
     public HomePage(WorldApp w) {
@@ -22,21 +25,44 @@ public class HomePage extends JFrame {
         Label label2 = new Label("Let's create our own adventure!", Label.CENTER);
         sentences.add(label2);
 
-        JPanel buttons = new JPanel();
+        buttons = new JPanel();
+        setupButtons();
+
+        add(sentences);
+        add(buttons);
+        setTitle("My Fantasy World");
+        setVisible(true);
+    }
+
+    void setupButtons() {
         buttons.setLayout(new GridLayout(2, 2));
         JButton viewWorld = new JButton("View world");
+        viewWorld.setActionCommand("view-world");
+        viewWorld.addActionListener(new ViewAction());
+
         JButton viewCategory = new JButton("View category");
+        viewCategory.setActionCommand("view-cat");
+        viewCategory.addActionListener(new ViewAction());
+
         JButton create = new JButton("Create");
         JButton exit = new JButton("Exit");
         buttons.add(viewWorld);
         buttons.add(viewCategory);
         buttons.add(create);
         buttons.add(exit);
+    }
 
-        add(sentences);
-        add(buttons);
-        setTitle("My Fantasy World");
-        setVisible(true);
+    // represents change frame function
+    private class ViewAction implements ActionListener {
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            if (e.getActionCommand().equals("view-world")) {
+                new ViewWorld(myWorld);
+            } else if (e.getActionCommand().equals("view-cat")) {
+                new ViewCat(myWorld);
+            }
+        }
     }
 
 

@@ -1,22 +1,60 @@
 {
-    "allFav": [{
-        "name": "LOL",
-        "category": "GAME"
-    }],
-    "allWantTo": [{
-        "name": "LOL",
-        "category": "GAME"
-    }],
+    "allFav": [
+        {
+            "name": "LOL",
+            "category": "GAME"
+        },
+        {
+            "name": "Harry",
+            "category": "BOOK"
+        }
+    ],
+    "allWantTo": [
+        {
+            "name": "LOL",
+            "category": "GAME"
+        },
+        {
+            "name": "AdventureTime",
+            "category": "CARTOON"
+        }
+    ],
     "game": [{
         "name": "LOL",
         "category": "GAME"
     }],
-    "allBeenTo": [],
-    "movie": [],
-    "cartoon": [],
-    "book": [],
-    "allWorld": [{
-        "name": "LOL",
-        "category": "GAME"
-    }]
+    "allBeenTo": [{
+        "name": "Vampire",
+        "category": "MOVIE"
+    }],
+    "movie": [{
+        "name": "Vampire",
+        "category": "MOVIE"
+    }],
+    "cartoon": [{
+        "name": "AdventureTime",
+        "category": "CARTOON"
+    }],
+    "book": [{
+        "name": "Harry",
+        "category": "BOOK"
+    }],
+    "allWorld": [
+        {
+            "name": "LOL",
+            "category": "GAME"
+        },
+        {
+            "name": "Harry",
+            "category": "BOOK"
+        },
+        {
+            "name": "AdventureTime",
+            "category": "CARTOON"
+        },
+        {
+            "name": "Vampire",
+            "category": "MOVIE"
+        }
+    ]
 }

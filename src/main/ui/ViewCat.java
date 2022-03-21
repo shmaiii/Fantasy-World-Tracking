@@ -1,6 +1,8 @@
 package ui;
 
 import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 //a class that represents gui of category viewing options
 public class ViewCat extends JFrame {
@@ -34,5 +36,13 @@ public class ViewCat extends JFrame {
 
     public void buttonProperties(JButton button) {
         menu.add(button);
+    }
+
+    private class ViewCatListAction implements ActionListener {
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            //
+        }
     }
 }
