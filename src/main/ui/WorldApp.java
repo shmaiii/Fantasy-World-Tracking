@@ -8,6 +8,7 @@ import model.FantasyWorld;
 import persistence.JsonReader;
 import persistence.JsonWriter;
 
+import javax.swing.*;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -141,7 +142,11 @@ public class WorldApp {
     //EFFECTS: print all elements in the lofw, if the lofw is empty then prompt a message
     public void printACategory(List<FantasyWorld> lofw) {
         checkEmptyListView(lofw);
-
+//        JList list = new JList((ListModel) lofw);
+//        list.setLayoutOrientation(JList.VERTICAL);
+//        list.setVisibleRowCount(-1);
+//        frame.setContentPane(list);
+//        frame.setVisible(true);
         for (FantasyWorld w : lofw) {
             System.out.println(w.getName());
         }
