@@ -23,11 +23,19 @@ public class ViewCat extends JFrame {
         frame.setSize(myWorld.getWidth(), myWorld.getHeight());
 
         menu = new JMenuBar();
+        addButtons();
+
+        frame.setJMenuBar(menu);
+        frame.setVisible(true);
+    }
+
+    //MODIFIES: this
+    //EFFECTS: add buttons
+    void addButtons() {
         JButton cartoon = new JButton("CARTOON");
         cartoon.setActionCommand("cartoon");
         buttonProperties(cartoon);
 
-        //frame.getRootPane().setDefaultButton(allWorld);
         JButton book = new JButton("BOOK");
         book.setActionCommand("book");
         buttonProperties(book);
@@ -43,11 +51,10 @@ public class ViewCat extends JFrame {
         backtoHomePage.setBackground(new Color(111, 90, 137));
         backtoHomePage.setForeground(Color.WHITE);
         menu.add(backtoHomePage);
-
-        frame.setJMenuBar(menu);
-        frame.setVisible(true);
     }
 
+    // MODIFIES: this
+    //EFFECTS: set up properties for buttons
     public void buttonProperties(JButton button) {
         menu.add(button);
         button.setBackground(new Color(111, 90, 137));
@@ -57,6 +64,8 @@ public class ViewCat extends JFrame {
 
     private class ViewCatListAction implements ActionListener {
 
+        // MODIFIES: this
+        //EFFECTS: layout lists based on action commands of buttons
         @Override
         public void actionPerformed(ActionEvent e) {
             if (e.getActionCommand().equals("book")) {
@@ -71,6 +80,8 @@ public class ViewCat extends JFrame {
             frame.setVisible(true);
         }
 
+        // MODIFIES: this
+        //EFFECTS: lay out JList to GUI
         public void layout(List<FantasyWorld> low) {
             frame.getContentPane().removeAll();
 
@@ -89,6 +100,8 @@ public class ViewCat extends JFrame {
     //a class that represents going back to homepage
     private class HomePageAction implements ActionListener {
 
+        // MODIFIES: this
+        // EFFECTS: return to homepage
         @Override
         public void actionPerformed(ActionEvent e) {
             new HomePage(myWorld);

@@ -52,6 +52,7 @@ public class ViewWorld extends JFrame {
         frame.setVisible(true);
     }
 
+    // EFFECTS: set up properties for button
     public void buttonProperties(JButton button) {
         button.setBackground(new Color(111, 90, 137));
         button.setForeground(Color.WHITE);
@@ -61,6 +62,8 @@ public class ViewWorld extends JFrame {
     //a class that represents going back to homepage
     private class HomePageAction implements ActionListener {
 
+        // MODIFIES: this
+        //EFFECTS: return to homepage
         @Override
         public void actionPerformed(ActionEvent e) {
             new HomePage(myWorld);
@@ -95,13 +98,7 @@ public class ViewWorld extends JFrame {
             JScrollPane scrollList = new JScrollPane(list);
 
             buttonPanel = new JPanel();
-            buttonPanel.setLayout(new FlowLayout());
-            markAsButton = new JButton("Mark As");
-            markAsButton.addActionListener(new MarkAsAction());
-            deleteButton = new JButton("Delete");
-            deleteButton.addActionListener(new DeleteAction());
-            setupButtons(markAsButton);
-            setupButtons(deleteButton);
+            createButtons();
 
             framePanel.add(scrollList);
             framePanel.add(buttonPanel, BorderLayout.PAGE_END);
@@ -109,6 +106,20 @@ public class ViewWorld extends JFrame {
             frame.setVisible(true);
         }
 
+        // MODIFIES: this
+        // EFFECTS: create 2 buttons markAs and delete
+        void createButtons() {
+            buttonPanel.setLayout(new FlowLayout());
+            markAsButton = new JButton("Mark As");
+            markAsButton.addActionListener(new MarkAsAction());
+            deleteButton = new JButton("Delete");
+            deleteButton.addActionListener(new DeleteAction());
+            setupButtons(markAsButton);
+            setupButtons(deleteButton);
+        }
+
+        // MODIFIES: this
+        // EFFECTS: setup button properties for button
         void setupButtons(JButton button) {
             button.setBackground(new Color(111, 90, 137));
             button.setForeground(Color.WHITE);
@@ -140,6 +151,7 @@ public class ViewWorld extends JFrame {
                 popupMenu.add(favButton);
                 popupMenu.add(beenToButton);
                 popupMenu.add(wantToButton);
+                popupMenu.setLocation(markAsButton.getX(), markAsButton.getY());
                 popupMenu.show(markAsButton, markAsButton.getX(), markAsButton.getY());
 
                 int index = list.getSelectedIndex();
@@ -207,6 +219,7 @@ public class ViewWorld extends JFrame {
         }
 
         @Override
+        // MODIFIES: this
         //EFFECTS: lay the sublists to gui
         public void actionPerformed(ActionEvent e) {
             layout(sublist);

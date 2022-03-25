@@ -1,7 +1,7 @@
 {
     "allFav": [{
-        "name": "Adventure Time",
-        "category": "CARTOON"
+        "name": "Harry Potter",
+        "category": "BOOK"
     }],
     "allWantTo": [],
     "game": [{
@@ -13,10 +13,7 @@
         "category": "BOOK"
     }],
     "movie": [],
-    "cartoon": [{
-        "name": "Adventure Time",
-        "category": "CARTOON"
-    }],
+    "cartoon": [],
     "book": [
         {
             "name": "Harry Potter",
@@ -39,10 +36,6 @@
         {
             "name": "LOL",
             "category": "GAME"
-        },
-        {
-            "name": "Adventure Time",
-            "category": "CARTOON"
         }
     ]
 }

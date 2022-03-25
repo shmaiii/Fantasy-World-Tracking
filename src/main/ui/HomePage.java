@@ -49,12 +49,15 @@ public class HomePage extends JFrame {
 
     }
 
+    // MODIFIES: this
+    //EFFECTS: set up frame for GUI
     void setupFrame() {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(myWorld.getWidth(), myWorld.getHeight());
         frame.setTitle("My Fantasy World");
     }
 
+    //MODIFIES: this
     //EFFECTS: set up the menuBar with load and save buttons
     void setupMenuBar() {
         JMenuBar menubar = new JMenuBar();
@@ -69,11 +72,14 @@ public class HomePage extends JFrame {
         frame.setJMenuBar(menubar);
     }
 
+    // MODIFIES: this
+    // EFFECTS: set properties for menu buttons
     void setMenuButton(JButton button) {
         button.setBackground(new Color(111, 90, 137));
         button.setForeground(Color.WHITE);
     }
 
+    //MODIFIES: this
     // EFFECTS: set up buttons for action choices
     void setupButtons() {
         buttons.setLayout(new BoxLayout(buttons, BoxLayout.Y_AXIS));
@@ -94,6 +100,7 @@ public class HomePage extends JFrame {
 
     }
 
+    //MODIFIES: this
     //EFFECTS: style the buttons
     void buttonProperties(JButton b) {
         b.setFont(new Font("Times New Roman", Font.BOLD, 30));
@@ -108,6 +115,7 @@ public class HomePage extends JFrame {
     // represents change frame function
     private class ViewAction implements ActionListener {
 
+        //MODIFIES: this
         // EFFECTS: based on the actionCommand, go to appropriate submenu's frame
         @Override
         public void actionPerformed(ActionEvent e) {
@@ -154,6 +162,7 @@ public class HomePage extends JFrame {
 
         String command;
 
+        // EFFECTS: construct a dataAction obj with specified command
         public DataAction(String command) {
             this.command = command;
         }

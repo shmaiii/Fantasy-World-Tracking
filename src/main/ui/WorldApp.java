@@ -39,6 +39,7 @@ public class WorldApp extends Frame {
         jsonWriter = new JsonWriter(JSON_FILE);
     }
 
+    //getters
     public AllFantasyWorld getWorld() {
         return myWorld;
     }
