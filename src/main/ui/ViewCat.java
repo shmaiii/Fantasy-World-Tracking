@@ -19,7 +19,7 @@ public class ViewCat extends JFrame {
 
         frame = new JFrame();
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(600, 600);
+        frame.setSize(myWorld.getWidth(), myWorld.getHeight());
 
         menu = new JMenuBar();
         JButton cartoon = new JButton("CARTOON");
@@ -36,6 +36,10 @@ public class ViewCat extends JFrame {
         JButton game = new JButton("GAME");
         game.setActionCommand("game");
         buttonProperties(game);
+
+        JButton backtoHomePage = new JButton("Home Page");
+        backtoHomePage.addActionListener(new HomePageAction());
+        menu.add(backtoHomePage);
 
         frame.setJMenuBar(menu);
         frame.setVisible(true);
@@ -73,6 +77,15 @@ public class ViewCat extends JFrame {
             list.setLayoutOrientation(JList.VERTICAL);
 
             frame.add(list);
+        }
+    }
+
+    //a class that represents going back to homepage
+    private class HomePageAction implements ActionListener {
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            new HomePage(myWorld);
         }
     }
 }

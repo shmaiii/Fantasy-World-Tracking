@@ -16,12 +16,16 @@ import java.util.Scanner;
 
 // My Fantasy World Application
 public class WorldApp {
+    private static int WIDTH = 1200;
+    private static int HEIGHT = 1200;
+
     private static final String JSON_FILE = "./data/worldApp.json";
     private AllFantasyWorld myWorld;
     private Scanner input;
     private List<FantasyWorld> onQueue;
     private JsonWriter jsonWriter;
     private JsonReader jsonReader;
+
 
     // EFFECTS: construct a WorldApp that sets the initial state of the AllFantasyWorld, with an empty onQueue list
     public WorldApp() {
@@ -34,6 +38,14 @@ public class WorldApp {
 
     public AllFantasyWorld getWorld() {
         return myWorld;
+    }
+
+    public int getWidth() {
+        return WIDTH;
+    }
+
+    public int getHeight() {
+        return HEIGHT;
     }
 
     // EFFECTS: display the initial welcome message and two big parent options - view/create world
@@ -258,7 +270,7 @@ public class WorldApp {
     }
 
     // EFFECTS: save the worldState to file
-    private void saveWorldState() {
+    public void saveWorldState() {
         try {
             jsonWriter.open();
             jsonWriter.write(myWorld);

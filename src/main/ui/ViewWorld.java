@@ -13,8 +13,6 @@ import java.util.List;
 
 // A class that represents options inside view-world
 public class ViewWorld extends JFrame {
-    private static int WIDTH = 600;
-    private static int HEIGHT = 600;
 
     protected JFrame frame;
     protected JMenuBar menu;
@@ -26,7 +24,7 @@ public class ViewWorld extends JFrame {
 
         frame = new JFrame();
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(WIDTH, HEIGHT);
+        frame.setSize(myWorld.getWidth(), myWorld.getHeight());
 
         menu = new JMenuBar();
         JButton allWorld = new JButton("All Worlds");
@@ -45,12 +43,25 @@ public class ViewWorld extends JFrame {
         wantTo.addActionListener(new SubListAction(myWorld.getWorld().getWantTo()));
         buttonProperties(wantTo);
 
+        JButton backtoHomePage = new JButton("Home Page");
+        backtoHomePage.addActionListener(new HomePageAction());
+        buttonProperties(backtoHomePage);
+
         frame.setJMenuBar(menu);
         frame.setVisible(true);
     }
 
     public void buttonProperties(JButton button) {
         menu.add(button);
+    }
+
+    //a class that represents going back to homepage
+    private class HomePageAction implements ActionListener {
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            new HomePage(myWorld);
+        }
     }
 
     // a class that represents the function of all world button
