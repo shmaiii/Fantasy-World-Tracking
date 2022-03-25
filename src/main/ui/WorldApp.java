@@ -8,8 +8,10 @@ import model.FantasyWorld;
 import persistence.JsonReader;
 import persistence.JsonWriter;
 
-import javax.swing.*;
+import java.awt.*;
 import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -51,6 +53,7 @@ public class WorldApp {
     // EFFECTS: display the initial welcome message and two big parent options - view/create world
     // show available options and take users' command
     public void displayHomePage() {
+        new SplashScreenWorld();
         new HomePage(this);
 //        System.out.println("Welcome to My Fantasy World");
 //        System.out.println("Let's create our own adventures!");
