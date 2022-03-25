@@ -23,9 +23,7 @@ public class ViewWorld extends JFrame {
         this.myWorld = myWorld;
 
         frame = new JFrame();
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(myWorld.getWidth(), myWorld.getHeight());
-        frame.setBackground(new Color(215, 196, 238));
+        setupFrame();
 
         menu = new JMenuBar();
         JButton allWorld = new JButton("All Worlds");
@@ -52,6 +50,15 @@ public class ViewWorld extends JFrame {
         frame.setVisible(true);
     }
 
+    //MODIFIES: this
+    //EFFECTS: set properties for frame
+    void setupFrame() {
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setSize(myWorld.getWidth(), myWorld.getHeight());
+        frame.setBackground(new Color(215, 196, 238));
+    }
+
+    //MODIFIES: this
     // EFFECTS: set up properties for button
     public void buttonProperties(JButton button) {
         button.setBackground(new Color(111, 90, 137));
