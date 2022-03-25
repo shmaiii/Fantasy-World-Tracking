@@ -14,20 +14,22 @@ public class SplashScreenWorld {
     //EFFECTS: construct the splashscreen project
     public SplashScreenWorld() {
         frame = new JFrame();
-        frame.setSize(1200, 900);
+        frame.setSize(800, 800);
         frame.setLocationRelativeTo(null);
 
         framePanel = new JPanel();
-        framePanel.setLayout(new GridLayout(2, 1));
+        framePanel.setLayout(new BorderLayout());
 
         ImageIcon img = new ImageIcon("./data/travelSplashIcon.jpg");
-        Image nimg = img.getImage().getScaledInstance(400, 400, Image.SCALE_DEFAULT);
+        Image nimg = img.getImage().getScaledInstance(500, 500, Image.SCALE_DEFAULT);
         img = new ImageIcon(nimg);
         JLabel image = new JLabel(img);
         framePanel.add(image);
 
         bar = new JProgressBar();
-        framePanel.add(bar);
+        JPanel barPanel = new JPanel();
+        barPanel.add(bar);
+        framePanel.add(barPanel, BorderLayout.PAGE_END);
 
         frame.add(framePanel);
         frame.setVisible(true);

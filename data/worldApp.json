@@ -1,10 +1,6 @@
 {
     "allFav": [
         {
-            "name": "Harry Potter",
-            "category": "BOOK"
-        },
-        {
             "name": "LOL",
             "category": "GAME"
         },
@@ -33,10 +29,6 @@
     }],
     "allBeenTo": [
         {
-            "name": "Alice in Wonderland",
-            "category": "BOOK"
-        },
-        {
             "name": "LOL",
             "category": "GAME"
         },
@@ -53,23 +45,13 @@
         "name": "Adventure Time",
         "category": "CARTOON"
     }],
-    "book": [
-        {
-            "name": "Harry Potter",
-            "category": "BOOK"
-        },
-        {
-            "name": "Alice in Wonderland",
-            "category": "BOOK"
-        }
-    ],
+    "book": [{
+        "name": "Harry Potter",
+        "category": "BOOK"
+    }],
     "allWorld": [
         {
             "name": "Harry Potter",
-            "category": "BOOK"
-        },
-        {
-            "name": "Alice in Wonderland",
             "category": "BOOK"
         },
         {
