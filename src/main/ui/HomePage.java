@@ -77,6 +77,7 @@ public class HomePage extends JFrame {
     void setMenuButton(JButton button) {
         button.setBackground(new Color(111, 90, 137));
         button.setForeground(Color.WHITE);
+        button.setFont(new Font("Times New Roman", Font.BOLD, 20));
     }
 
     //MODIFIES: this

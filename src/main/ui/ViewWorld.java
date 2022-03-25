@@ -63,7 +63,19 @@ public class ViewWorld extends JFrame {
     public void buttonProperties(JButton button) {
         button.setBackground(new Color(111, 90, 137));
         button.setForeground(Color.WHITE);
+        button.setFont(new Font("Times New Roman", Font.BOLD, 20));
         menu.add(button);
+    }
+
+    //MODIFIES: this
+    //EFFECTS: properties for JList
+    public void jlistProperties(JList list) {
+        list.setBackground(new Color(215, 196, 238));
+        list.setLayoutOrientation(JList.VERTICAL);
+        list.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+        list.setVisibleRowCount(-1);
+        list.setFixedCellHeight(50);
+        list.setFont(new Font("Times New Roman", Font.BOLD, 30));
     }
 
     //a class that represents going back to homepage
@@ -99,12 +111,7 @@ public class ViewWorld extends JFrame {
                 listModel.addElement(fw.getName());
             }
             list = new JList(listModel);
-            list.setBackground(new Color(215, 196, 238));
-            list.setLayoutOrientation(JList.VERTICAL);
-            list.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-            list.setVisibleRowCount(-1);
-            list.setFixedCellHeight(50);
-            list.setFont(new Font("Times New Roman", Font.BOLD,30));
+            jlistProperties(list);
             JScrollPane scrollList = new JScrollPane(list);
 
             buttonPanel = new JPanel();
@@ -133,6 +140,7 @@ public class ViewWorld extends JFrame {
         void setupButtons(JButton button) {
             button.setBackground(new Color(111, 90, 137));
             button.setForeground(Color.WHITE);
+            button.setFont(new Font("Times New Roman", Font.BOLD, 20));
             buttonPanel.add(button);
         }
 
@@ -245,11 +253,7 @@ public class ViewWorld extends JFrame {
                 listModel.addElement(fw.getName());
             }
             list = new JList(listModel);
-            list.setBackground(new Color(215, 196, 238));
-            list.setLayoutOrientation(JList.VERTICAL);
-            list.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-            list.setFixedCellHeight(50);
-            list.setFont(new Font("Times New Roman", Font.BOLD,30));
+            jlistProperties(list);
             JScrollPane scrollList = new JScrollPane(list);
             panelForFrame.add(scrollList);
 
@@ -257,6 +261,7 @@ public class ViewWorld extends JFrame {
             removeButton = new JButton("Remove");
             removeButton.setBackground(new Color(111, 90, 137));
             removeButton.setForeground(Color.WHITE);
+            removeButton.setFont(new Font("Times New Roman", Font.BOLD, 20));
             removeButton.addActionListener(new RemoveAction());
             buttonPanel.add(removeButton);
 

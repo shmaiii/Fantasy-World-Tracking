@@ -35,22 +35,26 @@ public class ViewCat extends JFrame {
         JButton cartoon = new JButton("CARTOON");
         cartoon.setActionCommand("cartoon");
         buttonProperties(cartoon);
+        cartoon.addActionListener(new ViewCatListAction());
 
         JButton book = new JButton("BOOK");
         book.setActionCommand("book");
         buttonProperties(book);
+        book.addActionListener(new ViewCatListAction());
+
         JButton movie = new JButton("MOVIE");
         movie.setActionCommand("movie");
         buttonProperties(movie);
+        movie.addActionListener(new ViewCatListAction());
+
         JButton game = new JButton("GAME");
         game.setActionCommand("game");
         buttonProperties(game);
+        game.addActionListener(new ViewCatListAction());
 
         JButton backtoHomePage = new JButton("Home Page");
+        buttonProperties(backtoHomePage);
         backtoHomePage.addActionListener(new HomePageAction());
-        backtoHomePage.setBackground(new Color(111, 90, 137));
-        backtoHomePage.setForeground(Color.WHITE);
-        menu.add(backtoHomePage);
     }
 
     // MODIFIES: this
@@ -59,7 +63,7 @@ public class ViewCat extends JFrame {
         menu.add(button);
         button.setBackground(new Color(111, 90, 137));
         button.setForeground(Color.WHITE);
-        button.addActionListener(new ViewCatListAction());
+        button.setFont(new Font("Times New Roman", Font.BOLD, 20));
     }
 
     private class ViewCatListAction implements ActionListener {
