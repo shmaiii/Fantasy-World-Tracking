@@ -29,16 +29,18 @@ public class HomePage extends JFrame {
         framePanel.setLayout(new GridLayout(2, 1));
 
         sentences = new JPanel();
+        sentences.setBackground(new Color(215, 196, 238));;
         sentences.setLayout(new GridLayout(2, 1));
 
         Label label1 = new Label("Welcome to my Fantasy World!", Label.CENTER);
-        label1.setFont(new Font("Times New Roman", Font.PLAIN, 50));
+        label1.setFont(new Font("Arial", Font.ITALIC, 50));
         sentences.add(label1);
         Label label2 = new Label("Let's create our own adventure!", Label.CENTER);
-        label2.setFont(new Font("Times New Roman", Font.PLAIN, 50));
+        label2.setFont(new Font("Times New Roman", Font.ITALIC, 50));
         sentences.add(label2);
 
         buttons = new JPanel();
+        buttons.setBackground(new Color(215, 196, 238));;
         setupButtons();
 
         framePanel.add(sentences);
@@ -48,6 +50,7 @@ public class HomePage extends JFrame {
         frame.setVisible(true);
     }
 
+    //EFFECTS: set up the menuBar with load and save buttons
     void setupMenuBar() {
         JMenuBar menubar = new JMenuBar();
         JButton load = new JButton("Load World");
@@ -59,8 +62,9 @@ public class HomePage extends JFrame {
         frame.setJMenuBar(menubar);
     }
 
+    // EFFECTS: set up buttons for action choices
     void setupButtons() {
-        buttons.setLayout(new GridLayout(3, 1));
+        buttons.setLayout(new BoxLayout(buttons, BoxLayout.Y_AXIS));
         JButton viewWorld = new JButton("View world");
         viewWorld.setActionCommand("view-world");
         viewWorld.addActionListener(new ViewAction());
@@ -71,9 +75,22 @@ public class HomePage extends JFrame {
 
         JButton create = new JButton("Create");
         create.addActionListener(new CreateAction());
-        buttons.add(viewWorld);
-        buttons.add(viewCategory);
-        buttons.add(create);
+
+        buttonProperties(viewWorld);
+        buttonProperties(viewCategory);
+        buttonProperties(create);
+
+    }
+
+    //EFFECTS: style the buttons
+    void buttonProperties(JButton b) {
+        b.setFont(new Font("Times New Roman", Font.BOLD, 30));
+        b.setForeground(Color.WHITE);
+        b.setAlignmentX(Component.CENTER_ALIGNMENT);
+        b.setBorderPainted(true);
+        b.setBackground(new Color(111, 90, 137));
+        buttons.add(b);
+        buttons.add(Box.createVerticalGlue());
     }
 
     // represents change frame function

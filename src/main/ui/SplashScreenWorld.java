@@ -4,12 +4,14 @@ import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
 
+// a class that represent the splashscreen
 public class SplashScreenWorld {
 
     JFrame frame;
     JProgressBar bar;
     JPanel framePanel;
 
+    //EFFECTS: construct the splashscreen project
     public SplashScreenWorld() {
         frame = new JFrame();
         frame.setSize(1200, 900);
@@ -18,15 +20,13 @@ public class SplashScreenWorld {
         framePanel = new JPanel();
         framePanel.setLayout(new GridLayout(2, 1));
 
-        ImageIcon img = new ImageIcon("./data/tobs.jpg");
+        ImageIcon img = new ImageIcon("./data/travelSplashIcon.jpg");
         Image nimg = img.getImage().getScaledInstance(400, 400, Image.SCALE_DEFAULT);
         img = new ImageIcon(nimg);
         JLabel image = new JLabel(img);
         framePanel.add(image);
 
         bar = new JProgressBar();
-        bar.setSize(200, 50);
-        bar.setValue(0);
         framePanel.add(bar);
 
         frame.add(framePanel);
@@ -35,14 +35,10 @@ public class SplashScreenWorld {
         runningProgress();
     }
 
-    public void imgSetUp() {
-        //img.setSize(40, 40);
-
-
-    }
-
+    // MODIFIES: this
+    // EFFECTS: make the progress bar runs to express the splash screen, splash screen ends when the progress bar ends
     public void runningProgress() {
-        for (int i = 0; i <= 100; i++) {
+        for (int i = 0; i <= 50; i++) {
             try {
                 Thread.sleep(50);
             } catch (InterruptedException e) {

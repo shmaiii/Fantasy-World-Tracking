@@ -1,60 +1,42 @@
 {
-    "allFav": [
-        {
-            "name": "LOL",
-            "category": "GAME"
-        },
-        {
-            "name": "Harry",
-            "category": "BOOK"
-        }
-    ],
-    "allWantTo": [
-        {
-            "name": "LOL",
-            "category": "GAME"
-        },
-        {
-            "name": "AdventureTime",
-            "category": "CARTOON"
-        }
-    ],
+    "allFav": [],
+    "allWantTo": [],
     "game": [{
         "name": "LOL",
         "category": "GAME"
     }],
-    "allBeenTo": [{
-        "name": "Vampire",
-        "category": "MOVIE"
-    }],
-    "movie": [{
-        "name": "Vampire",
-        "category": "MOVIE"
-    }],
+    "allBeenTo": [],
+    "movie": [],
     "cartoon": [{
-        "name": "AdventureTime",
+        "name": "Adventure Time",
         "category": "CARTOON"
     }],
-    "book": [{
-        "name": "Harry",
-        "category": "BOOK"
-    }],
+    "book": [
+        {
+            "name": "Harry Potter",
+            "category": "BOOK"
+        },
+        {
+            "name": "Alice in Wonderland",
+            "category": "BOOK"
+        }
+    ],
     "allWorld": [
+        {
+            "name": "Harry Potter",
+            "category": "BOOK"
+        },
+        {
+            "name": "Alice in Wonderland",
+            "category": "BOOK"
+        },
         {
             "name": "LOL",
             "category": "GAME"
         },
         {
-            "name": "Harry",
-            "category": "BOOK"
-        },
-        {
-            "name": "AdventureTime",
+            "name": "Adventure Time",
             "category": "CARTOON"
-        },
-        {
-            "name": "Vampire",
-            "category": "MOVIE"
         }
     ]
 }

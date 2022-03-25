@@ -8,6 +8,7 @@ import model.FantasyWorld;
 import persistence.JsonReader;
 import persistence.JsonWriter;
 
+import javax.swing.*;
 import java.awt.*;
 import java.io.IOException;
 import java.net.MalformedURLException;
@@ -17,12 +18,12 @@ import java.util.List;
 import java.util.Scanner;
 
 // My Fantasy World Application
-public class WorldApp {
-    private static int WIDTH = 1200;
-    private static int HEIGHT = 1200;
+public class WorldApp extends Frame {
+    protected static int WIDTH = 1200;
+    protected static int HEIGHT = 1200;
 
     private static final String JSON_FILE = "./data/worldApp.json";
-    private AllFantasyWorld myWorld;
+    protected AllFantasyWorld myWorld;
     private Scanner input;
     private List<FantasyWorld> onQueue;
     private JsonWriter jsonWriter;
@@ -53,7 +54,7 @@ public class WorldApp {
     // EFFECTS: display the initial welcome message and two big parent options - view/create world
     // show available options and take users' command
     public void displayHomePage() {
-        new SplashScreenWorld();
+        //new SplashScreenWorld();
         new HomePage(this);
 //        System.out.println("Welcome to My Fantasy World");
 //        System.out.println("Let's create our own adventures!");
