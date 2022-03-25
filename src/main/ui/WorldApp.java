@@ -54,7 +54,7 @@ public class WorldApp extends Frame {
     // EFFECTS: display the initial welcome message and two big parent options - view/create world
     // show available options and take users' command
     public void displayHomePage() {
-        //new SplashScreenWorld();
+        new SplashScreenWorld();
         new HomePage(this);
 //        System.out.println("Welcome to My Fantasy World");
 //        System.out.println("Let's create our own adventures!");

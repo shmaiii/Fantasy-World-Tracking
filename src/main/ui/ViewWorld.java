@@ -25,6 +25,7 @@ public class ViewWorld extends JFrame {
         frame = new JFrame();
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(myWorld.getWidth(), myWorld.getHeight());
+        frame.setBackground(new Color(215, 196, 238));
 
         menu = new JMenuBar();
         JButton allWorld = new JButton("All Worlds");
@@ -52,6 +53,8 @@ public class ViewWorld extends JFrame {
     }
 
     public void buttonProperties(JButton button) {
+        button.setBackground(new Color(111, 90, 137));
+        button.setForeground(Color.WHITE);
         menu.add(button);
     }
 
@@ -70,6 +73,8 @@ public class ViewWorld extends JFrame {
         DefaultListModel listModel;
         JButton deleteButton;
         JButton markAsButton;
+        JPanel buttonPanel;
+
 
         @Override
         // EFFECTS: lay the list of all worlds to gui
@@ -84,23 +89,30 @@ public class ViewWorld extends JFrame {
                 listModel.addElement(fw.getName());
             }
             list = new JList(listModel);
+            list.setBackground(new Color(215, 196, 238));
             list.setLayoutOrientation(JList.VERTICAL);
             list.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
             JScrollPane scrollList = new JScrollPane(list);
 
-            JPanel buttonPanel = new JPanel();
+            buttonPanel = new JPanel();
             buttonPanel.setLayout(new FlowLayout());
             markAsButton = new JButton("Mark As");
             markAsButton.addActionListener(new MarkAsAction());
             deleteButton = new JButton("Delete");
             deleteButton.addActionListener(new DeleteAction());
-            buttonPanel.add(markAsButton);
-            buttonPanel.add(deleteButton);
+            setupButtons(markAsButton);
+            setupButtons(deleteButton);
 
-            framePanel.add(scrollList, BorderLayout.PAGE_START);
+            framePanel.add(scrollList);
             framePanel.add(buttonPanel, BorderLayout.PAGE_END);
             frame.add(framePanel);
             frame.setVisible(true);
+        }
+
+        void setupButtons(JButton button) {
+            button.setBackground(new Color(111, 90, 137));
+            button.setForeground(Color.WHITE);
+            buttonPanel.add(button);
         }
 
         // a class that presents the markAs action
@@ -212,15 +224,19 @@ public class ViewWorld extends JFrame {
                 listModel.addElement(fw.getName());
             }
             list = new JList(listModel);
+            list.setBackground(new Color(215, 196, 238));
             list.setLayoutOrientation(JList.VERTICAL);
             list.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
             JScrollPane scrollList = new JScrollPane(list);
-            panelForFrame.add(scrollList, BorderLayout.PAGE_START);
+            panelForFrame.add(scrollList);
 
             JPanel buttonPanel = new JPanel();
             removeButton = new JButton("Remove");
+            removeButton.setBackground(new Color(111, 90, 137));
+            removeButton.setForeground(Color.WHITE);
             removeButton.addActionListener(new RemoveAction());
             buttonPanel.add(removeButton);
+
             panelForFrame.add(buttonPanel, BorderLayout.PAGE_END);
 
             frame.add(panelForFrame);
@@ -236,12 +252,12 @@ public class ViewWorld extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 int index = list.getSelectedIndex();
                 String worldName = (String) listModel.get(index);
+                listModel.remove(index);
                 for (FantasyWorld fw : sublist) {
                     if (fw.getName().equals(worldName)) {
                         myWorld.getWorld().remove(sublist, fw);
                     }
                 }
-                listModel.remove(index);
 
                 if (listModel.size() == 0) {
                     removeButton.setEnabled(false);

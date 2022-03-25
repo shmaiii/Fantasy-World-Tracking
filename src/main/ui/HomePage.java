@@ -20,16 +20,15 @@ public class HomePage extends JFrame {
     //EFFECTS: construct object that represents homepage
     public HomePage(WorldApp w) {
         frame = new JFrame();
-
         this.myWorld = w;
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(myWorld.getWidth(), myWorld.getHeight());
+        setupFrame();
+
         JPanel framePanel = new JPanel();
         setupMenuBar();
         framePanel.setLayout(new GridLayout(2, 1));
 
         sentences = new JPanel();
-        sentences.setBackground(new Color(215, 196, 238));;
+        sentences.setBackground(new Color(215, 196, 238));
         sentences.setLayout(new GridLayout(2, 1));
 
         Label label1 = new Label("Welcome to my Fantasy World!", Label.CENTER);
@@ -40,26 +39,39 @@ public class HomePage extends JFrame {
         sentences.add(label2);
 
         buttons = new JPanel();
-        buttons.setBackground(new Color(215, 196, 238));;
+        buttons.setBackground(new Color(215, 196, 238));
         setupButtons();
 
         framePanel.add(sentences);
         framePanel.add(buttons);
         frame.add(framePanel);
-        frame.setTitle("My Fantasy World");
         frame.setVisible(true);
+
+    }
+
+    void setupFrame() {
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setSize(myWorld.getWidth(), myWorld.getHeight());
+        frame.setTitle("My Fantasy World");
     }
 
     //EFFECTS: set up the menuBar with load and save buttons
     void setupMenuBar() {
         JMenuBar menubar = new JMenuBar();
         JButton load = new JButton("Load World");
+        setMenuButton(load);
         load.addActionListener(new DataAction("load"));
         JButton save = new JButton("Save World");
+        setMenuButton(save);
         save.addActionListener(new DataAction("save"));
         menubar.add(load);
         menubar.add(save);
         frame.setJMenuBar(menubar);
+    }
+
+    void setMenuButton(JButton button) {
+        button.setBackground(new Color(111, 90, 137));
+        button.setForeground(Color.WHITE);
     }
 
     // EFFECTS: set up buttons for action choices

@@ -3,6 +3,7 @@ package ui;
 import model.FantasyWorld;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.List;
@@ -39,6 +40,8 @@ public class ViewCat extends JFrame {
 
         JButton backtoHomePage = new JButton("Home Page");
         backtoHomePage.addActionListener(new HomePageAction());
+        backtoHomePage.setBackground(new Color(111, 90, 137));
+        backtoHomePage.setForeground(Color.WHITE);
         menu.add(backtoHomePage);
 
         frame.setJMenuBar(menu);
@@ -47,6 +50,8 @@ public class ViewCat extends JFrame {
 
     public void buttonProperties(JButton button) {
         menu.add(button);
+        button.setBackground(new Color(111, 90, 137));
+        button.setForeground(Color.WHITE);
         button.addActionListener(new ViewCatListAction());
     }
 
@@ -75,6 +80,7 @@ public class ViewCat extends JFrame {
             }
             JList list = new JList(listModel);
             list.setLayoutOrientation(JList.VERTICAL);
+            list.setBackground(new Color(215, 196, 238));
 
             frame.add(list);
         }

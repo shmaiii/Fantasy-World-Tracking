@@ -1,11 +1,17 @@
 {
-    "allFav": [],
+    "allFav": [{
+        "name": "Adventure Time",
+        "category": "CARTOON"
+    }],
     "allWantTo": [],
     "game": [{
         "name": "LOL",
         "category": "GAME"
     }],
-    "allBeenTo": [],
+    "allBeenTo": [{
+        "name": "Alice in Wonderland",
+        "category": "BOOK"
+    }],
     "movie": [],
     "cartoon": [{
         "name": "Adventure Time",
