@@ -91,7 +91,10 @@ public class ViewCat extends JFrame {
             }
             JList list = new JList(listModel);
             list.setLayoutOrientation(JList.VERTICAL);
+            list.setVisibleRowCount(-1);
             list.setBackground(new Color(215, 196, 238));
+            list.setFixedCellHeight(50);
+            list.setFont(new Font("Times New Roman", Font.BOLD,30));
 
             frame.add(list);
         }

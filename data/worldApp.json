@@ -1,17 +1,32 @@
 {
-    "allFav": [{
-        "name": "Harry Potter",
-        "category": "BOOK"
+    "allFav": [
+        {
+            "name": "Harry Potter",
+            "category": "BOOK"
+        },
+        {
+            "name": "LOL",
+            "category": "GAME"
+        }
+    ],
+    "allWantTo": [{
+        "name": "LOL",
+        "category": "GAME"
     }],
-    "allWantTo": [],
     "game": [{
         "name": "LOL",
         "category": "GAME"
     }],
-    "allBeenTo": [{
-        "name": "Alice in Wonderland",
-        "category": "BOOK"
-    }],
+    "allBeenTo": [
+        {
+            "name": "Alice in Wonderland",
+            "category": "BOOK"
+        },
+        {
+            "name": "LOL",
+            "category": "GAME"
+        }
+    ],
     "movie": [],
     "cartoon": [],
     "book": [

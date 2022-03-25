@@ -102,6 +102,9 @@ public class ViewWorld extends JFrame {
             list.setBackground(new Color(215, 196, 238));
             list.setLayoutOrientation(JList.VERTICAL);
             list.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+            list.setVisibleRowCount(-1);
+            list.setFixedCellHeight(50);
+            list.setFont(new Font("Times New Roman", Font.BOLD,30));
             JScrollPane scrollList = new JScrollPane(list);
 
             buttonPanel = new JPanel();
@@ -148,7 +151,6 @@ public class ViewWorld extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 JPopupMenu popupMenu = new JPopupMenu();
                 favButton = new JCheckBox("Fav");
-
                 favButton.addItemListener(this);
                 beenToButton = new JCheckBox("Been To");
                 beenToButton.addItemListener(this);
@@ -158,7 +160,6 @@ public class ViewWorld extends JFrame {
                 popupMenu.add(favButton);
                 popupMenu.add(beenToButton);
                 popupMenu.add(wantToButton);
-                popupMenu.setLocation(markAsButton.getX(), markAsButton.getY());
                 popupMenu.show(markAsButton, markAsButton.getX(), markAsButton.getY());
 
                 int index = list.getSelectedIndex();
@@ -247,6 +248,8 @@ public class ViewWorld extends JFrame {
             list.setBackground(new Color(215, 196, 238));
             list.setLayoutOrientation(JList.VERTICAL);
             list.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+            list.setFixedCellHeight(50);
+            list.setFont(new Font("Times New Roman", Font.BOLD,30));
             JScrollPane scrollList = new JScrollPane(list);
             panelForFrame.add(scrollList);
 
