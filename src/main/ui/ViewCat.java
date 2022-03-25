@@ -52,7 +52,7 @@ public class ViewCat extends JFrame {
         buttonProperties(game);
         game.addActionListener(new ViewCatListAction());
 
-        JButton backtoHomePage = new JButton("Home Page");
+        JButton backtoHomePage = new JButton("HomePage");
         buttonProperties(backtoHomePage);
         backtoHomePage.addActionListener(new HomePageAction());
     }

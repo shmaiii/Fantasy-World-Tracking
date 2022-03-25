@@ -7,12 +7,26 @@
         {
             "name": "LOL",
             "category": "GAME"
+        },
+        {
+            "name": "Riverdale",
+            "category": "MOVIE"
+        },
+        {
+            "name": "Adventure Time",
+            "category": "CARTOON"
         }
     ],
-    "allWantTo": [{
-        "name": "LOL",
-        "category": "GAME"
-    }],
+    "allWantTo": [
+        {
+            "name": "LOL",
+            "category": "GAME"
+        },
+        {
+            "name": "Riverdale",
+            "category": "MOVIE"
+        }
+    ],
     "game": [{
         "name": "LOL",
         "category": "GAME"
@@ -25,10 +39,20 @@
         {
             "name": "LOL",
             "category": "GAME"
+        },
+        {
+            "name": "Adventure Time",
+            "category": "CARTOON"
         }
     ],
-    "movie": [],
-    "cartoon": [],
+    "movie": [{
+        "name": "Riverdale",
+        "category": "MOVIE"
+    }],
+    "cartoon": [{
+        "name": "Adventure Time",
+        "category": "CARTOON"
+    }],
     "book": [
         {
             "name": "Harry Potter",
@@ -51,6 +75,14 @@
         {
             "name": "LOL",
             "category": "GAME"
+        },
+        {
+            "name": "Adventure Time",
+            "category": "CARTOON"
+        },
+        {
+            "name": "Riverdale",
+            "category": "MOVIE"
         }
     ]
 }
