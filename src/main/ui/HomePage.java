@@ -32,10 +32,10 @@ public class HomePage extends JFrame {
         sentences.setLayout(new GridLayout(2, 1));
 
         Label label1 = new Label("Welcome to my Fantasy World!", Label.CENTER);
-        label1.setFont(new Font("Arial", Font.ITALIC, 50));
+        label1.setFont(new Font("Times New Roman", Font.ITALIC | Font.BOLD, 50));
         sentences.add(label1);
         Label label2 = new Label("Let's create our own adventure!", Label.CENTER);
-        label2.setFont(new Font("Times New Roman", Font.ITALIC, 50));
+        label2.setFont(new Font("Times New Roman", Font.ITALIC | Font.BOLD, 50));
         sentences.add(label2);
 
         buttons = new JPanel();

@@ -41,10 +41,16 @@
         "name": "Riverdale",
         "category": "MOVIE"
     }],
-    "cartoon": [{
-        "name": "Adventure Time",
-        "category": "CARTOON"
-    }],
+    "cartoon": [
+        {
+            "name": "Adventure Time",
+            "category": "CARTOON"
+        },
+        {
+            "name": "Naruko",
+            "category": "CARTOON"
+        }
+    ],
     "book": [{
         "name": "Harry Potter",
         "category": "BOOK"
@@ -65,6 +71,10 @@
         {
             "name": "Riverdale",
             "category": "MOVIE"
+        },
+        {
+            "name": "Naruko",
+            "category": "CARTOON"
         }
     ]
 }

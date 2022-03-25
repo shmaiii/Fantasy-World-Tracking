@@ -18,7 +18,12 @@ public class SplashScreenWorld {
         frame.setLocationRelativeTo(null);
 
         framePanel = new JPanel();
+        framePanel.setBackground(new Color(215, 196, 238));
         framePanel.setLayout(new BorderLayout());
+
+        JLabel saying = new JLabel("My Fantasy World!");
+        saying.setFont(new Font("Times New Roman", Font.ITALIC | Font.BOLD, 40));
+        framePanel.add(saying, BorderLayout.PAGE_START);
 
         ImageIcon img = new ImageIcon("./data/travelSplashIcon.jpg");
         Image nimg = img.getImage().getScaledInstance(500, 500, Image.SCALE_DEFAULT);
@@ -40,9 +45,9 @@ public class SplashScreenWorld {
     // MODIFIES: this
     // EFFECTS: make the progress bar runs to express the splash screen, splash screen ends when the progress bar ends
     public void runningProgress() {
-        for (int i = 0; i <= 50; i++) {
+        for (int i = 0; i <= 100; i++) {
             try {
-                Thread.sleep(50);
+                Thread.sleep(30);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }

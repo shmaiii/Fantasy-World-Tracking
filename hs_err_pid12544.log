@@ -1,0 +1,221 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (malloc) failed to allocate 41696 bytes for Chunk::new
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   The process is running with CompressedOops enabled, and the Java Heap may be blocking the growth of the native heap
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+#   JVM is running with Unscaled Compressed Oops mode in which the Java heap is
+#     placed in the first 4GB address space. The Java Heap base address is the
+#     maximum limit for the native heap growth. Please use -XX:HeapBaseMinAddress
+#     to set the Java Heap base and to place the Java Heap above 4GB virtual address.
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (allocation.cpp:389), pid=12544, tid=0x0000000000000a34
+#
+# JRE version: OpenJDK Runtime Environment (8.0_312-b07) (build 1.8.0_312-b07)
+# Java VM: OpenJDK 64-Bit Server VM (25.312-b07 mixed mode windows-amd64 compressed oops)
+# Failed to write core dump. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x000001ce416cc000):  JavaThread "C2 CompilerThread0" daemon [_thread_in_native, id=2612, stack(0x0000000aeef00000,0x0000000aef000000)]
+
+Stack: [0x0000000aeef00000,0x0000000aef000000]
+[error occurred during error reporting (printing stack bounds), id 0xc0000005]
+
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+
+
+Current CompileTask:
+C2:    435  330 %     4       java.awt.image.ReplicateScaleFilter::setPixels @ 149 (229 bytes)
+
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x000001ce43032000 JavaThread "Image Fetcher 0" daemon [_thread_in_vm, id=16952, stack(0x0000000aef800000,0x0000000aef900000)]
+  0x000001ce42e1b800 JavaThread "AWT-Windows" daemon [_thread_in_native, id=10060, stack(0x0000000aef700000,0x0000000aef800000)]
+  0x000001ce42fbc800 JavaThread "AWT-Shutdown" [_thread_blocked, id=10268, stack(0x0000000aef600000,0x0000000aef700000)]
+  0x000001ce42fbb800 JavaThread "Java2D Disposer" daemon [_thread_blocked, id=15712, stack(0x0000000aef500000,0x0000000aef600000)]
+  0x000001ce42aea000 JavaThread "Service Thread" daemon [_thread_blocked, id=15496, stack(0x0000000aef300000,0x0000000aef400000)]
+  0x000001ce416f8000 JavaThread "C1 CompilerThread3" daemon [_thread_in_native, id=18420, stack(0x0000000aef200000,0x0000000aef300000)]
+  0x000001ce416d3000 JavaThread "C2 CompilerThread2" daemon [_thread_blocked, id=12920, stack(0x0000000aef100000,0x0000000aef200000)]
+  0x000001ce416cd000 JavaThread "C2 CompilerThread1" daemon [_thread_blocked, id=17716, stack(0x0000000aef000000,0x0000000aef100000)]
+=>0x000001ce416cc000 JavaThread "C2 CompilerThread0" daemon [_thread_in_native, id=2612, stack(0x0000000aeef00000,0x0000000aef000000)]
+  0x000001ce416c5000 JavaThread "Monitor Ctrl-Break" daemon [_thread_in_native, id=19144, stack(0x0000000aeee00000,0x0000000aeef00000)]
+  0x000001ce4168f800 JavaThread "Attach Listener" daemon [_thread_blocked, id=15560, stack(0x0000000aeed00000,0x0000000aeee00000)]
+  0x000001ce4168e000 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=17056, stack(0x0000000aeec00000,0x0000000aeed00000)]
+  0x000001ce41665000 JavaThread "Finalizer" daemon [_thread_blocked, id=10980, stack(0x0000000aeeb00000,0x0000000aeec00000)]
+  0x000001ce41656000 JavaThread "Reference Handler" daemon [_thread_blocked, id=13556, stack(0x0000000aeea00000,0x0000000aeeb00000)]
+  0x000001ce2ad4e800 JavaThread "main" [_thread_blocked, id=12344, stack(0x0000000aee000000,0x0000000aee100000)]
+
+Other Threads:
+  0x000001ce41623800 VMThread [stack: 0x0000000aee900000,0x0000000aeea00000] [id=13020]
+  0x000001ce42b0e800 WatcherThread [stack: 0x0000000aef400000,0x0000000aef500000] [id=14940]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+heap address: 0x0000000086600000, size: 1946 MB, Compressed Oops mode: 32-bit
+Narrow klass base: 0x0000000000000000, Narrow klass shift: 3
+Compressed class space size: 1073741824 Address: 0x0000000100000000
+
+Heap:
+ PSYoungGen      total 36352K, used 11676K [0x00000000d7780000, 0x00000000da000000, 0x0000000100000000)
+  eden space 31232K, 37% used [0x00000000d7780000,0x00000000d82e7040,0x00000000d9600000)
+  from space 5120K, 0% used [0x00000000d9b00000,0x00000000d9b00000,0x00000000da000000)
+  to   space 5120K, 0% used [0x00000000d9600000,0x00000000d9600000,0x00000000d9b00000)
+ ParOldGen       total 83456K, used 0K [0x0000000086600000, 0x000000008b780000, 0x00000000d7780000)
+  object space 83456K, 0% used [0x0000000086600000,0x0000000086600000,0x000000008b780000)
+ Metaspace       used 8227K, capacity 8412K, committed 8576K, reserved 1056768K
+  class space    used 951K, capacity 1033K, committed 1152K, reserved 1048576K
+
+Card table byte_map: [0x000001ce3ba20000,0x000001ce3bdf0000] byte_map_base: 0x000001ce3b5ed000
+
+Marking Bits: (ParMarkBitMap*) 0x000000006fb31860
+ Begin Bits: [0x000001ce3c080000, 0x000001ce3dee8000)
+ End Bits:   [0x000001ce3dee8000, 0x000001ce3fd50000)
+
+Polling page: 0x000001ce2c630000
+
+CodeCache: size=245760Kb used=1795Kb max_used=1795Kb free=243964Kb
+ bounds [0x000001ce2c660000, 0x000001ce2c8d0000, 0x000001ce3b660000]
+ total_blobs=723 nmethods=331 adapters=305
+ compilation: enabled
+
+Compilation events (10 events):
+Event: 0.431 Thread 0x000001ce416f8000  329       3       java.awt.image.ReplicateScaleFilter::setPixels (229 bytes)
+Event: 0.432 Thread 0x000001ce416f8000 nmethod 329 0x000001ce2c81cf50 code [0x000001ce2c81d120, 0x000001ce2c81dac0]
+Event: 0.432 Thread 0x000001ce416f8000  327       3       sun.awt.image.ImageWatched$WeakLink::lambda$update$0 (19 bytes)
+Event: 0.432 Thread 0x000001ce416cc000  330 %     4       java.awt.image.ReplicateScaleFilter::setPixels @ 149 (229 bytes)
+Event: 0.432 Thread 0x000001ce416f8000 nmethod 327 0x000001ce2c81e150 code [0x000001ce2c81e2c0, 0x000001ce2c81e590]
+Event: 0.432 Thread 0x000001ce416f8000  328       3       sun.awt.image.ImageWatched$WeakLink::update (39 bytes)
+Event: 0.433 Thread 0x000001ce416f8000 nmethod 328 0x000001ce2c81e690 code [0x000001ce2c81e860, 0x000001ce2c81f0e0]
+Event: 0.433 Thread 0x000001ce416f8000  331       3       java.awt.ImageMediaEntry::imageUpdate (51 bytes)
+Event: 0.434 Thread 0x000001ce416f8000 nmethod 331 0x000001ce2c81f510 code [0x000001ce2c81f6c0, 0x000001ce2c81ffb0]
+Event: 0.434 Thread 0x000001ce416f8000  333       3       sun.awt.image.IntegerInterleavedRaster::setDataElements (137 bytes)
+
+GC Heap History (0 events):
+No events
+
+Deoptimization events (1 events):
+Event: 0.357 Thread 0x000001ce2ad4e800 Uncommon trap: reason=null_check action=make_not_entrant pc=0x000001ce2c6d4378 method=java.lang.String.equals(Ljava/lang/Object;)Z @ 8
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (10 events):
+Event: 0.187 Thread 0x000001ce2ad4e800 Exception <a 'java/security/PrivilegedActionException'> (0x00000000d794fd18) thrown at [C:\wsjdk\Corretto8Src\installers\windows\zip\corretto-build\buildRoot\src\hotspot\src\share\vm\prims\jvm.cpp, line 1523]
+Event: 0.187 Thread 0x000001ce2ad4e800 Exception <a 'java/security/PrivilegedActionException'> (0x00000000d794ff28) thrown at [C:\wsjdk\Corretto8Src\installers\windows\zip\corretto-build\buildRoot\src\hotspot\src\share\vm\prims\jvm.cpp, line 1523]
+Event: 0.188 Thread 0x000001ce2ad4e800 Exception <a 'java/security/PrivilegedActionException'> (0x00000000d7954418) thrown at [C:\wsjdk\Corretto8Src\installers\windows\zip\corretto-build\buildRoot\src\hotspot\src\share\vm\prims\jvm.cpp, line 1523]
+Event: 0.188 Thread 0x000001ce2ad4e800 Exception <a 'java/security/PrivilegedActionException'> (0x00000000d7954628) thrown at [C:\wsjdk\Corretto8Src\installers\windows\zip\corretto-build\buildRoot\src\hotspot\src\share\vm\prims\jvm.cpp, line 1523]
+Event: 0.195 Thread 0x000001ce2ad4e800 Exception <a 'java/io/FileNotFoundException'> (0x00000000d7a947a0) thrown at [C:\wsjdk\Corretto8Src\installers\windows\zip\corretto-build\buildRoot\src\hotspot\src\share\vm\prims\jni.cpp, line 711]
+Event: 0.235 Thread 0x000001ce2ad4e800 Exception <a 'java/lang/NoSuchFieldError': method resolution failed> (0x00000000d7bc34f0) thrown at [C:\wsjdk\Corretto8Src\installers\windows\zip\corretto-build\buildRoot\src\hotspot\src\share\vm\prims\methodHandles.cpp, line 1176]
+Event: 0.237 Thread 0x000001ce2ad4e800 Exception <a 'java/lang/NoSuchFieldError': method resolution failed> (0x00000000d7bd1020) thrown at [C:\wsjdk\Corretto8Src\installers\windows\zip\corretto-build\buildRoot\src\hotspot\src\share\vm\prims\methodHandles.cpp, line 1176]
+Event: 0.278 Thread 0x000001ce2ad4e800 Exception <a 'java/lang/ClassNotFoundException': sun/dc/DuctusRenderingEngine> (0x00000000d7d19c68) thrown at [C:\wsjdk\Corretto8Src\installers\windows\zip\corretto-build\buildRoot\src\hotspot\src\share\vm\classfile\systemDictionary.cpp, line 217]
+Event: 0.289 Thread 0x000001ce2ad4e800 Exception <a 'java/io/FileNotFoundException'> (0x00000000d7d57f70) thrown at [C:\wsjdk\Corretto8Src\installers\windows\zip\corretto-build\buildRoot\src\hotspot\src\share\vm\prims\jni.cpp, line 711]
+Event: 0.357 Thread 0x000001ce2ad4e800 Implicit null exception at 0x000001ce2c6d4195 to 0x000001ce2c6d4369
+
+Events (10 events):
+Event: 0.412 loading class java/awt/image/WritableRenderedImage done
+Event: 0.412 loading class java/awt/image/BufferedImage done
+Event: 0.413 loading class java/awt/image/BufferedImage$1
+Event: 0.413 loading class java/awt/image/BufferedImage$1 done
+Event: 0.419 loading class java/awt/image/ReplicateScaleFilter
+Event: 0.419 loading class java/awt/image/ImageFilter
+Event: 0.420 loading class java/awt/image/ImageFilter done
+Event: 0.420 loading class java/awt/image/ReplicateScaleFilter done
+Event: 0.420 loading class java/awt/image/FilteredImageSource
+Event: 0.420 loading class java/awt/image/FilteredImageSource done
+
+
+Dynamic libraries:
+0x00007ff6dbbd0000 - 0x00007ff6dbc0a000 	C:\Users\Xuan Mai\.jdks\corretto-1.8.0_312\bin\java.exe
+0x00007ffd7fd10000 - 0x00007ffd7ff05000 	C:\WINDOWS\SYSTEM32\ntdll.dll
+0x00007ffd7e610000 - 0x00007ffd7e6ce000 	C:\WINDOWS\System32\KERNEL32.DLL
+0x00007ffd7d460000 - 0x00007ffd7d728000 	C:\WINDOWS\System32\KERNELBASE.dll
+0x00007ffd7f9e0000 - 0x00007ffd7fa8e000 	C:\WINDOWS\System32\ADVAPI32.dll
+0x00007ffd7ebe0000 - 0x00007ffd7ec7e000 	C:\WINDOWS\System32\msvcrt.dll
+0x00007ffd7f880000 - 0x00007ffd7f91c000 	C:\WINDOWS\System32\sechost.dll
+0x00007ffd7e360000 - 0x00007ffd7e485000 	C:\WINDOWS\System32\RPCRT4.dll
+0x00007ffd7ed60000 - 0x00007ffd7ef00000 	C:\WINDOWS\System32\USER32.dll
+0x00007ffd7dcf0000 - 0x00007ffd7dd12000 	C:\WINDOWS\System32\win32u.dll
+0x00007ffd7e730000 - 0x00007ffd7e75b000 	C:\WINDOWS\System32\GDI32.dll
+0x00007ffd7d730000 - 0x00007ffd7d83b000 	C:\WINDOWS\System32\gdi32full.dll
+0x00007ffd7d8b0000 - 0x00007ffd7d94d000 	C:\WINDOWS\System32\msvcp_win.dll
+0x00007ffd7dbf0000 - 0x00007ffd7dcf0000 	C:\WINDOWS\System32\ucrtbase.dll
+0x00007ffd5dab0000 - 0x00007ffd5dd4a000 	C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.19041.1110_none_60b5254171f9507e\COMCTL32.dll
+0x00007ffd7fca0000 - 0x00007ffd7fcd0000 	C:\WINDOWS\System32\IMM32.DLL
+0x00007ffd5acc0000 - 0x00007ffd5adaf000 	C:\Users\Xuan Mai\.jdks\corretto-1.8.0_312\jre\bin\msvcr120.dll
+0x00007ffd5bdd0000 - 0x00007ffd5be76000 	C:\Users\Xuan Mai\.jdks\corretto-1.8.0_312\jre\bin\msvcp120.dll
+0x000000006f340000 - 0x000000006fbb0000 	C:\Users\Xuan Mai\.jdks\corretto-1.8.0_312\jre\bin\server\jvm.dll
+0x00007ffd7e170000 - 0x00007ffd7e178000 	C:\WINDOWS\System32\PSAPI.DLL
+0x00007ffd70e90000 - 0x00007ffd70e9a000 	C:\WINDOWS\SYSTEM32\VERSION.dll
+0x00007ffd6b640000 - 0x00007ffd6b667000 	C:\WINDOWS\SYSTEM32\WINMM.dll
+0x00007ffd6cc70000 - 0x00007ffd6cc79000 	C:\WINDOWS\SYSTEM32\WSOCK32.dll
+0x00007ffd7ef00000 - 0x00007ffd7ef6b000 	C:\WINDOWS\System32\WS2_32.dll
+0x00007ffd756b0000 - 0x00007ffd756bf000 	C:\Users\Xuan Mai\.jdks\corretto-1.8.0_312\jre\bin\verify.dll
+0x00007ffd75680000 - 0x00007ffd756a9000 	C:\Users\Xuan Mai\.jdks\corretto-1.8.0_312\jre\bin\java.dll
+0x00007ffd72c00000 - 0x00007ffd72c2a000 	C:\Users\Xuan Mai\.jdks\corretto-1.8.0_312\jre\bin\instrument.dll
+0x00007ffd75410000 - 0x00007ffd75426000 	C:\Users\Xuan Mai\.jdks\corretto-1.8.0_312\jre\bin\zip.dll
+0x00007ffd7f130000 - 0x00007ffd7f874000 	C:\WINDOWS\System32\SHELL32.dll
+0x00007ffd7b520000 - 0x00007ffd7bcb4000 	C:\WINDOWS\SYSTEM32\windows.storage.dll
+0x00007ffd7dd70000 - 0x00007ffd7e0c4000 	C:\WINDOWS\System32\combase.dll
+0x00007ffd7ce20000 - 0x00007ffd7ce4c000 	C:\WINDOWS\SYSTEM32\Wldp.dll
+0x00007ffd7e1e0000 - 0x00007ffd7e28d000 	C:\WINDOWS\System32\SHCORE.dll
+0x00007ffd7e490000 - 0x00007ffd7e4e5000 	C:\WINDOWS\System32\shlwapi.dll
+0x00007ffd7d370000 - 0x00007ffd7d38f000 	C:\WINDOWS\SYSTEM32\profapi.dll
+0x00007ffd73380000 - 0x00007ffd7339a000 	C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2021.2.1\bin\breakgen64.dll
+0x00007ffd71c80000 - 0x00007ffd71c9a000 	C:\Users\Xuan Mai\.jdks\corretto-1.8.0_312\jre\bin\net.dll
+0x00007ffd7cb80000 - 0x00007ffd7cbea000 	C:\WINDOWS\system32\mswsock.dll
+0x00007ffd4ad90000 - 0x00007ffd4af25000 	C:\Users\Xuan Mai\.jdks\corretto-1.8.0_312\jre\bin\awt.dll
+0x00007ffd7e290000 - 0x00007ffd7e35d000 	C:\WINDOWS\System32\OLEAUT32.dll
+0x00007ffd77110000 - 0x00007ffd771a0000 	C:\WINDOWS\SYSTEM32\apphelp.dll
+0x00007ffd7ac60000 - 0x00007ffd7ac8f000 	C:\WINDOWS\system32\DWMAPI.DLL
+0x00007ffd77220000 - 0x00007ffd772be000 	C:\WINDOWS\system32\uxtheme.dll
+0x00007ffd54e40000 - 0x00007ffd54f66000 	C:\WINDOWS\system32\opengl32.dll
+0x00007ffd5da80000 - 0x00007ffd5daac000 	C:\WINDOWS\SYSTEM32\GLU32.dll
+0x00007ffd7e4f0000 - 0x00007ffd7e606000 	C:\WINDOWS\System32\MSCTF.dll
+0x00007ffd7f000000 - 0x00007ffd7f12a000 	C:\WINDOWS\System32\ole32.dll
+0x00007ffd7bcd0000 - 0x00007ffd7bce2000 	C:\WINDOWS\SYSTEM32\kernel.appcore.dll
+0x00007ffd7db60000 - 0x00007ffd7dbe2000 	C:\WINDOWS\System32\bcryptPrimitives.dll
+0x00007ffd71bd0000 - 0x00007ffd71bfa000 	C:\Users\Xuan Mai\.jdks\corretto-1.8.0_312\jre\bin\jpeg.dll
+
+VM Arguments:
+jvm_args: -javaagent:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2021.2.1\lib\idea_rt.jar=59130:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2021.2.1\bin -Dfile.encoding=UTF-8 
+java_command: ui.Main
+java_class_path (initial): C:\Users\Xuan Mai\.jdks\corretto-1.8.0_312\jre\lib\charsets.jar;C:\Users\Xuan Mai\.jdks\corretto-1.8.0_312\jre\lib\ext\access-bridge-64.jar;C:\Users\Xuan Mai\.jdks\corretto-1.8.0_312\jre\lib\ext\cldrdata.jar;C:\Users\Xuan Mai\.jdks\corretto-1.8.0_312\jre\lib\ext\dnsns.jar;C:\Users\Xuan Mai\.jdks\corretto-1.8.0_312\jre\lib\ext\jaccess.jar;C:\Users\Xuan Mai\.jdks\corretto-1.8.0_312\jre\lib\ext\jfxrt.jar;C:\Users\Xuan Mai\.jdks\corretto-1.8.0_312\jre\lib\ext\localedata.jar;C:\Users\Xuan Mai\.jdks\corretto-1.8.0_312\jre\lib\ext\nashorn.jar;C:\Users\Xuan Mai\.jdks\corretto-1.8.0_312\jre\lib\ext\sunec.jar;C:\Users\Xuan Mai\.jdks\corretto-1.8.0_312\jre\lib\ext\sunjce_provider.jar;C:\Users\Xuan Mai\.jdks\corretto-1.8.0_312\jre\lib\ext\sunmscapi.jar;C:\Users\Xuan Mai\.jdks\corretto-1.8.0_312\jre\lib\ext\sunpkcs11.jar;C:\Users\Xuan Mai\.jdks\corretto-1.8.0_312\jre\lib\ext\zipfs.jar;C:\Users\Xuan Mai\.jdks\corretto-1.8.0_312\jre\lib\jce.jar;C:\Users\Xuan Mai\.jdks\corretto-1.8.0_312\jre\lib\jfr.jar;C:\Users\Xuan Mai\.jdks\corretto-1.8.0_312\jre\lib\jfxswt.jar;C:\Users\Xuan Mai\.jdks\corretto-1.8.0_312\jre\lib\jsse.jar;C:\Users\Xuan Mai\.jdks\corretto-1.8.0_312\jre\lib\management-agent.jar;C:\Users\Xuan Mai\.jdks\corretto-1.8.0_312\jre\lib\resources.jar;C:\Users\Xuan Mai\.jdks\corretto-1.8.0_312\jre\lib\rt.jar;D:\UBC STUDY\CPSC 210\project\project_t1o5s\out\production\Project-Starter;D:\UBC STUDY\CPSC 210\project\project_t1o5s\lib\json-20210307.jar;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2021.2.1\lib\idea_rt.jar
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+PATH=C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\Users\Xuan Mai\AppData\Local\Microsoft\WindowsApps;;C:\Users\Xuan Mai\AppData\Local\Programs\Microsoft VS Code\bin
+USERNAME=Xuan Mai
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 126 Stepping 5, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 10.0 , 64 bit Build 19041 (10.0.19041.1566)
+
+CPU:total 8 (initial active 8) (4 cores per cpu, 2 threads per core) family 6 model 126 stepping 5, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, avx2, aes, clmul, erms, 3dnowpref, lzcnt, ht, tsc, tscinvbit, bmi1, bmi2, adx
+
+Memory: 4k page, physical 7964804k(641592k free), swap 7964804k(2028k free)
+
+vm_info: OpenJDK 64-Bit Server VM (25.312-b07) for windows-amd64 JRE (1.8.0_312-b07), built on Oct 14 2021 21:08:49 by "Administrator" with MS VC++ 12.0 (VS2013)
+
+time: Fri Mar 25 15:29:40 2022
+timezone: Pacific Daylight Time
+elapsed time: 0.440252 seconds (0d 0h 0m 0s)
+
