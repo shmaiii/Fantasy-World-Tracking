@@ -66,6 +66,7 @@ public class ViewCat extends JFrame {
         button.setFont(new Font("Times New Roman", Font.BOLD, 20));
     }
 
+    // a class that represents the action to view category
     private class ViewCatListAction implements ActionListener {
 
         // MODIFIES: this
