@@ -1,46 +1,15 @@
 {
-    "allFav": [
-        {
-            "name": "LOL",
-            "category": "GAME"
-        },
-        {
-            "name": "Riverdale",
-            "category": "MOVIE"
-        },
-        {
-            "name": "Adventure Time",
-            "category": "CARTOON"
-        }
-    ],
-    "allWantTo": [
-        {
-            "name": "LOL",
-            "category": "GAME"
-        },
-        {
-            "name": "Riverdale",
-            "category": "MOVIE"
-        }
-    ],
-    "game": [{
-        "name": "LOL",
-        "category": "GAME"
+    "allFav": [{
+        "name": "Adventure Time",
+        "category": "CARTOON"
     }],
-    "allBeenTo": [
-        {
-            "name": "LOL",
-            "category": "GAME"
-        },
-        {
-            "name": "Adventure Time",
-            "category": "CARTOON"
-        }
-    ],
-    "movie": [{
-        "name": "Riverdale",
-        "category": "MOVIE"
+    "allWantTo": [],
+    "game": [],
+    "allBeenTo": [{
+        "name": "Adventure Time",
+        "category": "CARTOON"
     }],
+    "movie": [],
     "cartoon": [
         {
             "name": "Adventure Time",
@@ -48,6 +17,10 @@
         },
         {
             "name": "Naruko",
+            "category": "CARTOON"
+        },
+        {
+            "name": "Spirited Away",
             "category": "CARTOON"
         }
     ],
@@ -61,19 +34,15 @@
             "category": "BOOK"
         },
         {
-            "name": "LOL",
-            "category": "GAME"
-        },
-        {
             "name": "Adventure Time",
             "category": "CARTOON"
         },
         {
-            "name": "Riverdale",
-            "category": "MOVIE"
+            "name": "Naruko",
+            "category": "CARTOON"
         },
         {
-            "name": "Naruko",
+            "name": "Spirited Away",
             "category": "CARTOON"
         }
     ]

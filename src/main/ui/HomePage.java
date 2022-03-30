@@ -176,6 +176,7 @@ public class HomePage extends JFrame {
                 myWorld.loadWorldState();
             }
             if (command.equals("save")) {
+                myWorld.removeItemsOnQueue();
                 myWorld.saveWorldState();
             }
         }

@@ -25,7 +25,10 @@ public class WorldApp extends Frame {
     private static final String JSON_FILE = "./data/worldApp.json";
     protected AllFantasyWorld myWorld;
     private Scanner input;
-    private List<FantasyWorld> onQueue;
+    private List<FantasyWorld> onQueueDelete;
+    private List<FantasyWorld> queueRemoveFromBeenTo;
+    private List<FantasyWorld> queueRemoveFromWantTo;
+    private List<FantasyWorld> queueRemoveFromFav;
     private JsonWriter jsonWriter;
     private JsonReader jsonReader;
 
@@ -34,9 +37,32 @@ public class WorldApp extends Frame {
     public WorldApp() {
         myWorld = new AllFantasyWorld();
         input = new Scanner(System.in);
-        onQueue = new ArrayList<>();
+        onQueueDelete = new ArrayList<>();
+        queueRemoveFromBeenTo = new ArrayList<>();
+        queueRemoveFromWantTo = new ArrayList<>();
+        queueRemoveFromFav = new ArrayList<>();
         jsonReader = new JsonReader(JSON_FILE);
         jsonWriter = new JsonWriter(JSON_FILE);
+    }
+
+    //MODIFIES: this
+    //EFFECTS: adding a world to appropriate queue
+    public void addToDeleteQueue(FantasyWorld fw) {
+        onQueueDelete.add(fw);
+    }
+
+    //MODIFIES: this
+    //EFFECTS: adding a world to appropriate queue
+    public void addToRemoveQueue(List<FantasyWorld> sublist, FantasyWorld fw) {
+        if (sublist.equals(myWorld.getBeenTo())) {
+            queueRemoveFromBeenTo.add(fw);
+        }
+        if (sublist.equals(myWorld.getWantTo())) {
+            queueRemoveFromWantTo.add(fw);
+        }
+        if (sublist.equals(myWorld.getFav())) {
+            queueRemoveFromFav.add(fw);
+        }
     }
 
     //getters
@@ -185,7 +211,7 @@ public class WorldApp extends Frame {
                 markAs(fw);
             }
             if (command.equals("delete")) {
-                onQueue.add(fw);
+                onQueueDelete.add(fw);
             }
         }
         deleteItemsOnQueue();
@@ -205,37 +231,49 @@ public class WorldApp extends Frame {
             System.out.println("remove? yes/no");
             String command = input.next();
             if (command.equals("yes")) {
-                onQueue.add(fw);
+                addToRemoveQueue(lofw, fw);
             }
         }
-        removeItemsOnQueue(lofw);
+        removeItemsOnQueue();
         backToHomepage();
     }
 
     //MODIFIES: this
     //EFFECT: delete fws inside onQueue from all lists ever, remove that world from onQueue after execution
     public void deleteItemsOnQueue() {
-        if (onQueue.size() > 0) {
-            for (FantasyWorld fw : onQueue) {
+        if (onQueueDelete.size() > 0) {
+            for (FantasyWorld fw : onQueueDelete) {
                 myWorld.deleteWorld(fw);
             }
-            onQueue.clear();
+            onQueueDelete.clear();
         }
-        saveWorldState();
+        //saveWorldState();
     }
 
     //REQUIRES: fw in onQueue is in lofw
     // MODIFIES: this
     // EFFECTS: remove fws inside onQueue from the indicated list, but this fw will still be present in other lists
     // remove these fws from onQueue after each execution
-    public void removeItemsOnQueue(List<FantasyWorld> lofw) {
-        if (onQueue.size() > 0) {
-            for (FantasyWorld fw : onQueue) {
-                myWorld.remove(lofw, fw);
+    public void removeItemsOnQueue() {
+        if (queueRemoveFromBeenTo.size() > 0) {
+            for (FantasyWorld fw : queueRemoveFromBeenTo) {
+                myWorld.remove(myWorld.getBeenTo(), fw);
             }
-            onQueue.clear();
+            queueRemoveFromBeenTo.clear();
         }
-        saveWorldState();
+        if (queueRemoveFromWantTo.size() > 0) {
+            for (FantasyWorld fw : queueRemoveFromWantTo) {
+                myWorld.remove(myWorld.getWantTo(), fw);
+            }
+            queueRemoveFromWantTo.clear();
+        }
+        if (queueRemoveFromFav.size() > 0) {
+            for (FantasyWorld fw : queueRemoveFromFav) {
+                myWorld.remove(myWorld.getFav(), fw);
+            }
+            queueRemoveFromFav.clear();
+        }
+        //saveWorldState();
     }
 
     // MODIFIES: this

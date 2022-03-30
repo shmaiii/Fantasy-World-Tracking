@@ -97,11 +97,13 @@ public class ViewWorld extends JFrame {
         JButton markAsButton;
         JPanel buttonPanel;
 
-
         @Override
         // EFFECTS: lay the list of all worlds to gui
         // create a panel for each world, with appropriate 2 buttons
         public void actionPerformed(ActionEvent e) {
+            myWorld.deleteItemsOnQueue();
+            myWorld.removeItemsOnQueue();
+
             frame.getContentPane().removeAll();
             JPanel framePanel = new JPanel();
             framePanel.setLayout(new BorderLayout());
@@ -200,16 +202,24 @@ public class ViewWorld extends JFrame {
         // a class that represents the delete action of delete button
         private class DeleteAction implements ActionListener {
 
+            //EFFECT: construct deleteAction object
+            public DeleteAction() {
+
+            }
+
             //MODIFIES: this
             //EFFECTS: delete the selected world from the world state, laying out on the gui.
             // Disable button if list is empty
             @Override
             public void actionPerformed(ActionEvent e) {
+
                 int index = list.getSelectedIndex();
                 String worldName = (String) listModel.get(index);
+
                 for (FantasyWorld fw : myWorld.getWorld().getAllWorld()) {
                     if (fw.getName().equals(worldName)) {
-                        myWorld.getWorld().deleteWorld(fw);
+                        myWorld.addToDeleteQueue(fw);
+                        break;
                     }
                 }
                 listModel.remove(index);
@@ -238,6 +248,9 @@ public class ViewWorld extends JFrame {
         // MODIFIES: this
         //EFFECTS: lay the sublists to gui
         public void actionPerformed(ActionEvent e) {
+            myWorld.deleteItemsOnQueue();
+            myWorld.removeItemsOnQueue();
+
             layout(sublist);
             frame.setVisible(true);
         }
@@ -281,14 +294,15 @@ public class ViewWorld extends JFrame {
                 int index = list.getSelectedIndex();
                 String worldName = (String) listModel.get(index);
                 listModel.remove(index);
-                for (FantasyWorld fw : sublist) {
-                    if (fw.getName().equals(worldName)) {
-                        myWorld.getWorld().remove(sublist, fw);
-                    }
-                }
 
                 if (listModel.size() == 0) {
                     removeButton.setEnabled(false);
+                }
+
+                for (FantasyWorld fw : sublist) {
+                    if (fw.getName().equals(worldName)) {
+                        myWorld.addToRemoveQueue(sublist, fw);
+                    }
                 }
             }
         }
