@@ -85,6 +85,7 @@ public class ViewWorld extends JFrame {
         //EFFECTS: return to homepage
         @Override
         public void actionPerformed(ActionEvent e) {
+            frame.dispose();
             new HomePage(myWorld);
         }
     }

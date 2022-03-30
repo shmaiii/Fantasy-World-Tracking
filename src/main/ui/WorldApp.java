@@ -4,6 +4,8 @@ import model.AllFantasyWorld;
 
 import static model.Category.*;
 
+import model.Event;
+import model.EventLog;
 import model.FantasyWorld;
 import persistence.JsonReader;
 import persistence.JsonWriter;
@@ -314,6 +316,9 @@ public class WorldApp extends Frame {
 
     // EFFECTS: save the worldState to file
     public void saveWorldState() {
+        for (Event e : EventLog.getInstance()) {
+            System.out.println(e.toString());
+        }
         try {
             jsonWriter.open();
             jsonWriter.write(myWorld);

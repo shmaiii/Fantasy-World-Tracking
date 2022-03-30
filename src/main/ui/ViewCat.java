@@ -112,6 +112,7 @@ public class ViewCat extends JFrame {
         // EFFECTS: return to homepage
         @Override
         public void actionPerformed(ActionEvent e) {
+            frame.dispose();
             new HomePage(myWorld);
         }
     }

@@ -1,15 +1,12 @@
 {
-    "allFav": [{
-        "name": "Adventure Time",
-        "category": "CARTOON"
-    }],
+    "allFav": [],
     "allWantTo": [],
     "game": [],
-    "allBeenTo": [{
-        "name": "Adventure Time",
-        "category": "CARTOON"
+    "allBeenTo": [],
+    "movie": [{
+        "name": "25 21",
+        "category": "MOVIE"
     }],
-    "movie": [],
     "cartoon": [
         {
             "name": "Adventure Time",
@@ -24,15 +21,8 @@
             "category": "CARTOON"
         }
     ],
-    "book": [{
-        "name": "Harry Potter",
-        "category": "BOOK"
-    }],
+    "book": [],
     "allWorld": [
-        {
-            "name": "Harry Potter",
-            "category": "BOOK"
-        },
         {
             "name": "Adventure Time",
             "category": "CARTOON"
@@ -44,6 +34,10 @@
         {
             "name": "Spirited Away",
             "category": "CARTOON"
+        },
+        {
+            "name": "25 21",
+            "category": "MOVIE"
         }
     ]
 }

@@ -120,6 +120,7 @@ public class HomePage extends JFrame {
         // EFFECTS: based on the actionCommand, go to appropriate submenu's frame
         @Override
         public void actionPerformed(ActionEvent e) {
+            frame.dispose();
             if (e.getActionCommand().equals("view-world")) {
                 new ViewWorld(myWorld);
             } else if (e.getActionCommand().equals("view-cat")) {

@@ -87,7 +87,8 @@ public class AllFantasyWorld implements Writable {
             } else {
                 game.add(fw);
             }
-
+            EventLog.getInstance().logEvent(new Event("Store " + fw.getName()
+                    + " with category " + cat.toString()));
             return true;
         }
 
@@ -119,6 +120,8 @@ public class AllFantasyWorld implements Writable {
         if (allFav.contains(fw)) {
             allFav.remove(fw);
         }
+
+        EventLog.getInstance().logEvent(new Event("Delete " + fw.getName() + " from My Fantasy World."));
     }
 
     //REQUIRES: fw is in the listToRemove, listToRemove is one of allBeenTom, allWantTo, allFav
@@ -134,6 +137,9 @@ public class AllFantasyWorld implements Writable {
         } else {
             fw.setFav(false);
         }
+
+        //EventLog.getInstance().logEvent(new Event("Remove " + fw.getName() + " from"
+        //        + listToRemove.toString()));
     }
 
     //REQUIRES: listToAdd is one of allBeenTom, allWantTo, allFav
