@@ -26,7 +26,7 @@ fantasy worlds (Potterheads, Alice in Wonderland fans, etc...)
 - COVID is going to prevent people from traveling, so let's 'travel' through pages and movies!
 - I'm learning to create an application with a topic I really like!
 
-##User Stories
+## User Stories
 - As a user, I want to be able to create and add a fantasy world to my world list in appropriate category
 - As a user, I want to be able to mark a fantasy world as "been to", "want to", and "favourite".
 - As a user, I want to be able to view the lists of worlds I have been to, want to go to, and favourite 
@@ -38,7 +38,7 @@ all the lists I made changes to, after everytime I make change
 - As a user, I want to be able to load the existing worlds and lists from file automatically everytime I restart
 the program
 
-##Phase 4 : Task 2
+## Phase 4 : Task 2
 Wed Mar 30 18:18:54 PDT 2022 \
 Store Adventure Time with category CARTOON \
 Wed Mar 30 18:18:54 PDT 2022 \
@@ -68,7 +68,7 @@ Add Reply 1988 to a sublist \
 Wed Mar 30 18:19:52 PDT 2022 \
 Remove Naruko from a sublist
 
-##Phase 4 : Task 3
+## Phase 4 : Task 3
 I'm pretty satisfied with the design of classes in the model and persistence package, with the existing functionalities.
 They are pretty neat and clean, with not a lof of code duplications. It makes sense to me to have a FantasyWorld class, 
 and an AllFantasyWorld class that contains lists of FantasyWorld and definition of core functions that act on these 
