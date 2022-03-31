@@ -72,7 +72,7 @@ public class AllFantasyWorld implements Writable {
     //MODIFIES: this
     // EFFECTS: add this fw to list of all worlds, and add this world to according category list.
     // return true if added successfully, return false if the fw has already existed in the list to avoid
-    // duplication.
+    // duplication. Log event if added successfully.
     public boolean storeWorld(FantasyWorld fw) {
         if (allWorld.contains(fw) == false) {
             allWorld.add(fw);
@@ -97,7 +97,8 @@ public class AllFantasyWorld implements Writable {
 
     //REQUIRES: fw is already in the list of all world
     // MODIFIES: this
-    // EFFECTS: delete a world from list of all world and appropriate category it belongs to and other sublists
+    // EFFECTS: delete a world from list of all world and appropriate category it belongs to and other sublists; log
+    // event
     public void deleteWorld(FantasyWorld fw) {
         allWorld.remove(fw);
 
@@ -126,7 +127,7 @@ public class AllFantasyWorld implements Writable {
 
     //REQUIRES: fw is in the listToRemove, listToRemove is one of allBeenTom, allWantTo, allFav
     //MODIFIES: this
-    //EFFECTS: remove a world from the indicated list beenTo/wantTo/fav, setting the status appropriately
+    //EFFECTS: remove a world from the indicated list beenTo/wantTo/fav, setting the status appropriately, log event
     public void remove(List<FantasyWorld> listToRemove, FantasyWorld fw) {
         listToRemove.remove(fw);
 
@@ -145,6 +146,7 @@ public class AllFantasyWorld implements Writable {
     // MODIFIES: this
     //EFFECTS: add a world to the indicated list (beenTo, wantTo, fav)
     // and set the status accordingly, return true if success, else return false (if world has alr existed in the list)
+    // and log event if success
     public boolean add(List<FantasyWorld> listToAdd, FantasyWorld fw) {
         if (listToAdd.contains(fw) == false) {
 
