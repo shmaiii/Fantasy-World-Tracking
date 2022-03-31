@@ -138,8 +138,7 @@ public class AllFantasyWorld implements Writable {
             fw.setFav(false);
         }
 
-        //EventLog.getInstance().logEvent(new Event("Remove " + fw.getName() + " from"
-        //        + listToRemove.toString()));
+        EventLog.getInstance().logEvent(new Event("Remove " + fw.getName() + " from a sublist"));
     }
 
     //REQUIRES: listToAdd is one of allBeenTom, allWantTo, allFav
@@ -158,6 +157,7 @@ public class AllFantasyWorld implements Writable {
             } else {
                 fw.setFav(true);
             }
+            EventLog.getInstance().logEvent(new Event("Add " + fw.getName() + " to a sublist"));
             return true;
         }
         return false;

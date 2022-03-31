@@ -1,12 +1,44 @@
 {
-    "allFav": [],
+    "allFav": [
+        {
+            "name": "25 21",
+            "category": "MOVIE"
+        },
+        {
+            "name": "Reply 1988",
+            "category": "MOVIE"
+        }
+    ],
     "allWantTo": [],
     "game": [],
-    "allBeenTo": [],
-    "movie": [{
-        "name": "25 21",
-        "category": "MOVIE"
-    }],
+    "allBeenTo": [
+        {
+            "name": "25 21",
+            "category": "MOVIE"
+        },
+        {
+            "name": "Adventure Time",
+            "category": "CARTOON"
+        },
+        {
+            "name": "Reply 1988",
+            "category": "MOVIE"
+        }
+    ],
+    "movie": [
+        {
+            "name": "25 21",
+            "category": "MOVIE"
+        },
+        {
+            "name": "Business Proposal",
+            "category": "MOVIE"
+        },
+        {
+            "name": "Reply 1988",
+            "category": "MOVIE"
+        }
+    ],
     "cartoon": [
         {
             "name": "Adventure Time",
@@ -17,11 +49,14 @@
             "category": "CARTOON"
         },
         {
-            "name": "Spirited Away",
+            "name": "Totoro",
             "category": "CARTOON"
         }
     ],
-    "book": [],
+    "book": [{
+        "name": "MAUS",
+        "category": "BOOK"
+    }],
     "allWorld": [
         {
             "name": "Adventure Time",
@@ -32,11 +67,23 @@
             "category": "CARTOON"
         },
         {
-            "name": "Spirited Away",
+            "name": "25 21",
+            "category": "MOVIE"
+        },
+        {
+            "name": "Business Proposal",
+            "category": "MOVIE"
+        },
+        {
+            "name": "MAUS",
+            "category": "BOOK"
+        },
+        {
+            "name": "Totoro",
             "category": "CARTOON"
         },
         {
-            "name": "25 21",
+            "name": "Reply 1988",
             "category": "MOVIE"
         }
     ]

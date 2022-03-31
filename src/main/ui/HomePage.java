@@ -1,11 +1,15 @@
 package ui;
 
+import model.Event;
+import model.EventLog;
 import model.FantasyWorld;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 
 import static model.Category.*;
 import static model.Category.MOVIE;
@@ -52,7 +56,16 @@ public class HomePage extends JFrame {
     // MODIFIES: this
     //EFFECTS: set up frame for GUI
     void setupFrame() {
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+        frame.addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosing(WindowEvent e) {
+                for (Event ev : EventLog.getInstance()) {
+                    System.out.println(ev.toString());
+                }
+                System.exit(0);
+            }
+        });
         frame.setSize(myWorld.getWidth(), myWorld.getHeight());
         frame.setTitle("My Fantasy World");
     }

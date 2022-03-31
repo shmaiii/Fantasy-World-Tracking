@@ -85,6 +85,8 @@ public class WorldApp extends Frame {
     public void displayHomePage() {
         new SplashScreenWorld();
         new HomePage(this);
+
+
 //        System.out.println("Welcome to My Fantasy World");
 //        System.out.println("Let's create our own adventures!");
 //
@@ -316,9 +318,6 @@ public class WorldApp extends Frame {
 
     // EFFECTS: save the worldState to file
     public void saveWorldState() {
-        for (Event e : EventLog.getInstance()) {
-            System.out.println(e.toString());
-        }
         try {
             jsonWriter.open();
             jsonWriter.write(myWorld);

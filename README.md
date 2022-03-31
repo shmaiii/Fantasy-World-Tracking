@@ -37,3 +37,33 @@ fantasy worlds (Potterheads, Alice in Wonderland fans, etc...)
 all the lists I made changes to, after everytime I make change
 - As a user, I want to be able to load the existing worlds and lists from file automatically everytime I restart
 the program
+
+##Phase 4 : Task 2
+Wed Mar 30 18:18:54 PDT 2022
+Store Adventure Time with category CARTOON
+Wed Mar 30 18:18:54 PDT 2022
+Store Naruko with category CARTOON
+Wed Mar 30 18:18:54 PDT 2022
+Store 25 21 with category MOVIE
+Wed Mar 30 18:18:54 PDT 2022
+Store Business Proposal with category MOVIE
+Wed Mar 30 18:18:54 PDT 2022
+Store MAUS with category BOOK
+Wed Mar 30 18:18:54 PDT 2022
+Add 25 21 to a sublist
+Wed Mar 30 18:18:54 PDT 2022
+Add Adventure Time to a sublist
+Wed Mar 30 18:18:54 PDT 2022
+Add Naruko to a sublist
+Wed Mar 30 18:18:54 PDT 2022
+Add 25 21 to a sublist
+Wed Mar 30 18:19:16 PDT 2022
+Store Totoro with category CARTOON
+Wed Mar 30 18:19:26 PDT 2022
+Store Reply 1988 with category MOVIE
+Wed Mar 30 18:19:36 PDT 2022
+Add Reply 1988 to a sublist
+Wed Mar 30 18:19:38 PDT 2022
+Add Reply 1988 to a sublist
+Wed Mar 30 18:19:52 PDT 2022
+Remove Naruko from a sublist

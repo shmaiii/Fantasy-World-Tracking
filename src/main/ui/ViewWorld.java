@@ -4,10 +4,7 @@ import model.FantasyWorld;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.ItemEvent;
-import java.awt.event.ItemListener;
+import java.awt.event.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -53,7 +50,14 @@ public class ViewWorld extends JFrame {
     //MODIFIES: this
     //EFFECTS: set properties for frame
     void setupFrame() {
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+        frame.addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosing(WindowEvent e) {
+                frame.dispose();
+                new HomePage(myWorld);
+            }
+        });
         frame.setSize(myWorld.getWidth(), myWorld.getHeight());
         frame.setBackground(new Color(215, 196, 238));
     }

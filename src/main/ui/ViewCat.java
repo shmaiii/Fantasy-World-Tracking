@@ -6,6 +6,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import java.util.List;
 
 //a class that represents gui of category viewing options
@@ -19,7 +21,14 @@ public class ViewCat extends JFrame {
         this.myWorld = myWorld;
 
         frame = new JFrame();
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+        frame.addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosing(WindowEvent e) {
+                frame.dispose();
+                new HomePage(myWorld);
+            }
+        });
         frame.setSize(myWorld.getWidth(), myWorld.getHeight());
 
         menu = new JMenuBar();
