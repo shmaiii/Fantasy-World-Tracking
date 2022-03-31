@@ -5,7 +5,6 @@ import model.FantasyWorld;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
-import java.util.ArrayList;
 import java.util.List;
 
 // A class that represents options inside view-world
@@ -89,6 +88,9 @@ public class ViewWorld extends JFrame {
         //EFFECTS: return to homepage
         @Override
         public void actionPerformed(ActionEvent e) {
+            myWorld.deleteItemsOnQueue();
+            myWorld.removeItemsOnQueue();
+
             frame.dispose();
             new HomePage(myWorld);
         }
@@ -206,11 +208,6 @@ public class ViewWorld extends JFrame {
 
         // a class that represents the delete action of delete button
         private class DeleteAction implements ActionListener {
-
-            //EFFECT: construct deleteAction object
-            public DeleteAction() {
-
-            }
 
             //MODIFIES: this
             //EFFECTS: delete the selected world from the world state, laying out on the gui.
