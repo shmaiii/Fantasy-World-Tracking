@@ -74,22 +74,8 @@ They are pretty neat and clean, with not a lof of code duplications. It makes se
 and an AllFantasyWorld class that contains lists of FantasyWorld and definition of core functions that act on these 
 lists.
 
-I think there are a lot of rooms for improvement for the design of the ui package. If I have more time, I believe it is
-worth changing the associations of WorldApp, HomePage, ViewWorld, and ViewCat classes. I'm thinking of:
-- Making WorldApp, HomePage, ViewWorld extend the WorldApp class 
-- Making WorldApp extend JFrame. 
-- Using a same frame for WorldApp, HomePage, and ViewWorld instead of initializing a new frame and re-setup the frame
-each time I want to open a new window/viewing option. 
+I think there are a lot of rooms for improvement for the design of the ui package. If I have more time, I would want to get rid of code duplications to set up a frame, and the complications of attaching a WorldApp object each class.
 
-These will help me get rid of code duplications to set up a frame, and the complications of attaching a WorldApp object
-each class.
-
-Other than the aforementioned class relationships, I would want to:
-
-- Make the common color pattern (like purple background) a final variable to adopt single point of control
-- Improve coupling by reducing code copy (like grouping common visualization methods into one method and move it to the
-higher class in the hierarchy (after implementing the hierarchy), improving the setup and properties methods, etc)
-- Try to apply Observer Pattern so that when I have some event in the WorldApp (like store a world, delete a world,
-change a sublist,etc), the world state will update the changes without my having to add the deleting/removing worlds to
+Other than the aforementioned class relationships, I would want to try to apply Observer Pattern so that when I have some event in the WorldApp (like store a world, delete a world, change a sublist,etc), the world state will update the changes without my having to add the deleting/removing worlds to
 a queue to avoid ConcurrentModificationException. (The queue while resolves the exception problem, requires code 
 duplication in the ViewWorld app)
